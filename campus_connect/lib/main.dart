@@ -1,4 +1,4 @@
-import 'package:campus_connect/src/screens/landing_screen.dart';
+import 'package:campus_connect/src/screens/main_screens/landing_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
