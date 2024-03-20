@@ -3,6 +3,7 @@ import 'package:campus_connect/src/utils/constants/colors.dart';
 import 'package:campus_connect/src/utils/constants/fontsizes.dart';
 import 'package:campus_connect/src/utils/constants/fontweights.dart';
 import 'package:campus_connect/src/utils/constants/strings.dart';
+import 'package:campus_connect/src/widgets/custom_widgets/container_with_animation.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/text_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -31,13 +32,13 @@ class _LandingScreenPageView extends State<LandingScreenPageView> {
         if(pageController.page == 4.0){
           pageController.animateToPage(
             0,
-            duration: const Duration(seconds: 2),
+            duration: const Duration(seconds: 3),
             curve: Curves.decelerate
           );
         }
         else{
           pageController.nextPage(
-            duration: const Duration(seconds: 2),
+            duration: const Duration(seconds: 1),
             curve: Curves.decelerate
           );
         }
@@ -61,26 +62,26 @@ class _LandingScreenPageView extends State<LandingScreenPageView> {
           child: PageView(
             onPageChanged: (pageIndex) => valueNotifier.value = pageIndex,
             controller: pageController,
-            children: [
-              Image.asset(
-                universityJpg,
-                fit: BoxFit.cover
+            children: const [
+              ContainerWithAnimation(
+                text: text1,
+                imageString: universityJpg
               ),
-              Image.asset(
-                threePeople1Jpg,
-                fit: BoxFit.cover
+              ContainerWithAnimation(
+                text: text2,
+                imageString: threePeople1Jpg
               ),
-              Image.asset(
-                onePersonJpg,
-                fit: BoxFit.cover
+              ContainerWithAnimation(
+                text: text3,
+                imageString: onePersonJpg
               ),
-              Image.asset(
-                twoPeopleJpg,
-                fit: BoxFit.cover
+              ContainerWithAnimation(
+                text: text4,
+                imageString: twoPeopleJpg
               ),
-              Image.asset(
-                manyPeopleJpg,
-                fit: BoxFit.cover
+              ContainerWithAnimation(
+                text: text5,
+                imageString: manyPeopleJpg
               ),
             ],
           ),
@@ -116,7 +117,7 @@ class _LandingScreenPageView extends State<LandingScreenPageView> {
                       position: value,
                       dotsCount: 5,
                       decorator: DotsDecorator(
-                        activeColor: whiteColor,
+                        activeColor: redColor,
                         activeShape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5)
                         ),
@@ -124,8 +125,8 @@ class _LandingScreenPageView extends State<LandingScreenPageView> {
                         color: blackColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
-                          side: BorderSide(
-                            color: whiteColor.withAlpha(200),
+                          side: const BorderSide(
+                            color: whiteColor,
                             width: 1
                           )
                         )

@@ -29,13 +29,14 @@ class BottomSheetForLandingScreen extends StatelessWidget {
               children: [
                 const Gap(30),
                 GenericElevatedButton(
+                  backgroundColor: redColor,
                   onPressed: (){},
                   title: getStartedString
                 ),
                 const Gap(15),
                 GenericElevatedButton(
                   backgroundColor: whiteColor,
-                  color: blackColor,
+                  color: redColor,
                   onPressed: (){},
                   title: nameString
                 ),

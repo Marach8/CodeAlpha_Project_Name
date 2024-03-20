@@ -12,3 +12,9 @@ const getStartedString = 'Get Started';
 const nameString = 'Okay';
 const introString = 'Welcome';
 const introString2 = 'You look good';
+
+const text1 = 'Welcome to CampusConnect';
+const text2 = 'Discuss latest Campus trends';
+const text3 = 'Get updates of hottest events on campus';
+const text4 = 'Share campus events with your friend';
+const text5 = 'Have a nice experience with us';
