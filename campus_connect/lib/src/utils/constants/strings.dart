@@ -20,3 +20,16 @@ const text2 = 'Discuss latest Campus trends';
 const text3 = 'Get updates of hottest events on campus';
 const text4 = 'Share campus events with your friend';
 const text5 = 'Have a nice experience with us';
+
+const initializingString = 'Initializing';
+
+const userNameString = 'username';
+const emailString = 'email';
+const passwordString = 'password';
+const userIdString = 'user-uid';
+const dateTimeOfSignUpString = 'datetime-of-signUp';
+const dateFormatString = 'yyyy-MM-dd, hh:mm a';
+
+const authSuccessString = 'Authentication success!';
+const usersString = 'Users';
+const userNotVerifiedString = 'User not verified! Check your for a verification link.';
