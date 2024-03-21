@@ -32,10 +32,9 @@ class BottomSheetForLandingScreen extends StatelessWidget {
                 const Gap(30),
                 GenericElevatedButton(
                   fontSize: fontSize4,
-                  fontWeight: fontWeight7,
                   backgroundColor: redColor,
                   onPressed: (){},
-                  title: signInString
+                  title: getStartedString
                 ),
                 const Gap(15),
                 GenericElevatedButton(

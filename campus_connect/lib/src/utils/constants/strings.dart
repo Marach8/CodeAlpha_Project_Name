@@ -5,6 +5,7 @@ const onePersonJpg = 'assets/png/pexels-charlotte-may-5965930.png';
 const manyPeopleJpg = 'assets/png/pexels-kampus-production-5940841.png';
 const universityJpg = 'assets/png/zhanhui-li-1iuxWsIZ6ko-unsplash.png';
 
+const bikeRiderLottie = 'assets/lottie_json/Animation - 1711014643849.json';
 
 const quickSandFont = 'QuickSand';
 const emptyString = '';
