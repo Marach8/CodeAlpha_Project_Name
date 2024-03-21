@@ -66,7 +66,7 @@ SingleTickerProviderStateMixin{
             child: GenericText(
               color: whiteColor,
               fontSize: fontSize1,
-              fontWeight: fontWeight7,
+              fontWeight: fontWeight5,
               text: widget.text,
             ),
           ),

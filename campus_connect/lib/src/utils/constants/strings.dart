@@ -9,7 +9,8 @@ const universityJpg = 'assets/png/zhanhui-li-1iuxWsIZ6ko-unsplash.png';
 const quickSandFont = 'QuickSand';
 const emptyString = '';
 const getStartedString = 'Get Started';
-const nameString = 'Okay';
+const signUpString = 'Sign Up';
+const signInString = 'Sign In';
 const introString = 'Welcome';
 const introString2 = 'You look good';
 
