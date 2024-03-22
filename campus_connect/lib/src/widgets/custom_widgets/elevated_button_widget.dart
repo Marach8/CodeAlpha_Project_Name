@@ -42,6 +42,11 @@ class GenericElevatedButton extends StatelessWidget {
               strokeAlign: 1, 
               color: color ?? blackColor
             )
+          ),
+          shape: MaterialStatePropertyAll(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10)
+            )
           )
         ),
         child: GenericText(

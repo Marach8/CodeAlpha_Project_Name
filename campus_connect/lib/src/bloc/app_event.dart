@@ -20,3 +20,8 @@ class GoToSignInAndSignUpEvent extends AppEvent{
 class GoToHomeScreenEvent extends AppEvent{
   const GoToHomeScreenEvent();
 }
+
+@immutable 
+class GoToLandingScreenView extends AppEvent{
+  const GoToLandingScreenView();
+}

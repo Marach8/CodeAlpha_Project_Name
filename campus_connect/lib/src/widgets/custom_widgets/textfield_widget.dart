@@ -50,13 +50,13 @@ class GenericTextField extends StatelessWidget {
           borderSide: const BorderSide(
             color: redColor
           ),
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(10),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: blackColor.withOpacity(0.1)
           ),
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(10),
         ),
         label: Text(hintText),
         suffixIcon: suffixIcon,

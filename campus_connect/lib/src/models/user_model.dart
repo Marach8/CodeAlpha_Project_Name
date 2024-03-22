@@ -12,9 +12,9 @@ class UserPayload extends MapView<String, String>{
     required String userId
   }): super(
     {
-        userNameString: username,
-        emailString: email,
-        passwordString: password,
+        userNameString.toLowerCase(): username,
+        emailString.toLowerCase(): email,
+        passwordString.toLowerCase(): password,
         userIdString: userId,
         dateTimeOfSignUpString : DateFormat(dateFormatString).format(DateTime.now())
     }

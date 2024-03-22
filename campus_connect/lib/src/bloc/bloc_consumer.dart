@@ -1,7 +1,8 @@
 import 'package:campus_connect/src/bloc/app_bloc.dart';
 import 'package:campus_connect/src/bloc/app_state.dart';
 import 'package:campus_connect/src/screens/main_screens/landing_screen.dart';
-import 'package:campus_connect/src/screens/main_screens/sign_in_sign_up_screen.dart';
+import 'package:campus_connect/src/screens/main_screens/user_auth_screen/combination.dart';
+import 'package:campus_connect/src/screens/main_screens/user_auth_screen/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

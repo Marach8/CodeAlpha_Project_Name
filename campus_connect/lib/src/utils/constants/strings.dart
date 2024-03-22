@@ -6,6 +6,7 @@ const manyPeopleJpg = 'assets/png/pexels-kampus-production-5940841.png';
 const universityJpg = 'assets/png/zhanhui-li-1iuxWsIZ6ko-unsplash.png';
 
 const bikeRiderLottie = 'assets/lottie_json/Animation - 1711125544499.json';
+const bikeRider2Lottie = 'assets/lottie_json/Animation - 1711125602836.json';
 
 
 const quickSandFont = 'QuickSand';
@@ -24,9 +25,9 @@ const text5 = 'Have a nice experience with us';
 
 const initializingString = 'Initializing';
 
-const userNameString = 'username';
-const emailString = 'email';
-const passwordString = 'password';
+const userNameString = 'Username';
+const emailString = 'Email';
+const passwordString = 'Password';
 const userIdString = 'user-uid';
 const dateTimeOfSignUpString = 'datetime-of-signUp';
 const dateFormatString = 'yyyy-MM-dd, hh:mm a';
@@ -35,10 +36,12 @@ const authSuccessString = 'Authentication success!';
 const usersString = 'Users';
 const userNotVerifiedString = 'User not verified! Check your for a verification link.';
 
-const welcomeBackString = 'Welcome Back';
+const welcomeBackString = 'Welcome back!';
 const loginToAccountString = 'Login to your existing account';
-const enterEmailString = 'Enter your email';
-const enterPasswordString = 'Enter your password';
 const rememberMeString = 'Remember Me';
 const forgortPasswordString = 'Forgot Password';
 const noAccountString = "Don't have an account? ";
+const haveAccountString = 'Already have an account? ';
+const letsGetStartedString = "Let's get started!";
+const createAccountString = 'Create an account';
+const confirmPasswordString = 'Confirm password';
