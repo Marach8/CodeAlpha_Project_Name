@@ -33,3 +33,11 @@ const dateFormatString = 'yyyy-MM-dd, hh:mm a';
 const authSuccessString = 'Authentication success!';
 const usersString = 'Users';
 const userNotVerifiedString = 'User not verified! Check your for a verification link.';
+
+const welcomeBackString = 'Welcome Back';
+const loginToAccountString = 'Login to your existing account';
+const enterEmailString = 'Enter your email';
+const enterPasswordString = 'Enter your password';
+const rememberMeString = 'Remember Me';
+const forgortPasswordString = 'Forgot Password';
+const noAccountString = "Don't have an account? ";

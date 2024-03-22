@@ -17,6 +17,8 @@ class AppBloc extends Bloc<AppEvent, AppState>{
       );
     });
 
-    
+    on<GoToSignInAndSignUpEvent>((_, emit){
+      emit(InSignInAndSignUpScreenState());
+    });
   }
 }

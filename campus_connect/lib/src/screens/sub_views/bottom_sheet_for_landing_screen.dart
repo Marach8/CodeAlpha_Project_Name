@@ -1,9 +1,12 @@
+import 'package:campus_connect/src/bloc/app_bloc.dart';
+import 'package:campus_connect/src/bloc/app_event.dart';
 import 'package:campus_connect/src/utils/constants/colors.dart';
 import 'package:campus_connect/src/utils/constants/fontsizes.dart';
 import 'package:campus_connect/src/utils/constants/fontweights.dart';
 import 'package:campus_connect/src/utils/constants/strings.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/elevated_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 class BottomSheetForLandingScreen extends StatelessWidget {
@@ -33,7 +36,11 @@ class BottomSheetForLandingScreen extends StatelessWidget {
                 GenericElevatedButton(
                   fontSize: fontSize4,
                   backgroundColor: redColor,
-                  onPressed: (){},
+                  onPressed: (){
+                    context.read<AppBloc>().add(
+                      const GoToSignInAndSignUpEvent()
+                    );
+                  },
                   title: getStartedString
                 ),
                 const Gap(15),

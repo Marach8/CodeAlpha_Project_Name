@@ -1,7 +1,11 @@
 import 'package:campus_connect/firebase_options.dart';
-import 'package:campus_connect/src/screens/main_screens/landing_screen.dart';
+import 'package:campus_connect/src/bloc/app_event.dart';
+import 'package:campus_connect/src/bloc/bloc_consumer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'src/bloc/app_bloc.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,13 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        useMaterial3: true
+    return BlocProvider<AppBloc>(
+      create: (_) => AppBloc()..add(
+        const InitializationEvent()
       ),
-      home: const LandingPageScreen(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          useMaterial3: true
+        ),
+        home: const BlocConsumerWidget(),
+      ),
     );
   }
 }

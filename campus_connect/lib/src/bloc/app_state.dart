@@ -24,12 +24,9 @@ abstract class AppState{
 @immutable 
 class InLandingScreenState extends AppState{
   InLandingScreenState({
-    bool? isLoading,
-    String? operation
-}): super(
-        isLoading: isLoading,
-        operation: operation
-  );
+    super.isLoading,
+    super.operation
+  });
 }
 
 
