@@ -53,8 +53,8 @@ class GenericTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: blackColor
+          borderSide: BorderSide(
+            color: blackColor.withOpacity(0.1)
           ),
           borderRadius: BorderRadius.circular(50),
         ),

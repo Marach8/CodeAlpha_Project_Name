@@ -34,6 +34,8 @@ class BottomSheetForLandingScreen extends StatelessWidget {
               children: [
                 const Gap(30),
                 GenericElevatedButton(
+                  margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+                  color: blackColor,
                   fontSize: fontSize4,
                   backgroundColor: redColor,
                   onPressed: (){
@@ -45,6 +47,7 @@ class BottomSheetForLandingScreen extends StatelessWidget {
                 ),
                 const Gap(15),
                 GenericElevatedButton(
+                  margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
                   fontWeight: fontWeight7,
                   fontSize: fontSize4,
                   backgroundColor: whiteColor,

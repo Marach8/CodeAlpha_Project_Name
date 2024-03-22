@@ -3,10 +3,13 @@ import 'package:lottie/lottie.dart';
 
 class GenericLottieAnimation extends StatelessWidget {
   final String lottiePath;
+  final double? height, width;
   
   const GenericLottieAnimation({
     super.key,
-    required this.lottiePath
+    required this.lottiePath,
+    this.height,
+    this.width
   });
 
   @override
@@ -14,6 +17,8 @@ class GenericLottieAnimation extends StatelessWidget {
     return Lottie.asset(
       lottiePath,
       fit: BoxFit.cover,
+      width: width,
+      height: height,
     );
   }
 }

@@ -12,7 +12,7 @@ class GenericElevatedButton extends StatelessWidget {
   backgroundColor;
   final double? fontSize;
   final FontWeight? fontWeight;
-  final bool? noMargin;
+  final EdgeInsetsGeometry? margin;
 
   const GenericElevatedButton({
     super.key,
@@ -21,7 +21,7 @@ class GenericElevatedButton extends StatelessWidget {
     this.color,
     this.backgroundColor,
     this.fontSize,
-    this.noMargin,
+    this.margin,
     this.fontWeight
   });
 
@@ -29,7 +29,7 @@ class GenericElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      margin: noMargin ?? false ? null : const EdgeInsets.fromLTRB(50, 0, 50, 0),
+      margin: margin,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
@@ -45,7 +45,7 @@ class GenericElevatedButton extends StatelessWidget {
           )
         ),
         child: GenericText(
-          color: color ?? whiteColor,
+          color: color,
           fontSize: fontSize ?? fontSize3,
           fontWeight: fontWeight ?? fontWeight5,
           text: title
