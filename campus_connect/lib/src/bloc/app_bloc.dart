@@ -49,7 +49,7 @@ class AppBloc extends Bloc<AppEvent, AppState>{
           emit(
             InSignInAndSignUpScreenState(
               isLoading: true,
-              operation: loadingString
+              operation: registeringString
             )
           );
           final authResult = await authService.registerUser(
@@ -88,7 +88,56 @@ class AppBloc extends Bloc<AppEvent, AppState>{
           );
         }
       }
-      //At least, on field is empty
+      //At least, one field is empty
+      else{
+        emit(
+          InSignInAndSignUpScreenState().copyState(
+            showNotification: true,
+            notification: emptyFieldsString
+          )
+        );
+      }
+    });
+
+    //Sign in a user
+    on<LoginUserEvent>((event, emit) async{
+      final email = event.emailController.text;
+      final password = event.passwordController.text;
+
+      if(email.isNotEmpty && password.isNotEmpty){
+        emit(
+          InSignInAndSignUpScreenState(
+            isLoading: true,
+            operation: loggingInString
+          )
+        );
+        final authResult = await authService.loginUser(
+          email: email,
+          password: password
+        );
+
+        if(authResult == authSuccessString){
+          emit(
+            InSignInAndSignUpScreenState(
+              notification: authResult,
+              showNotification: true
+            )
+          );
+
+        } 
+        //authentication failed.
+        else{
+          marach.log(authResult);
+          emit(
+            InSignInAndSignUpScreenState(
+              notification: authResult,
+              showNotification: true
+            )
+          );
+        }
+      }
+
+      //At least, one field is empty
       else{
         emit(
           InSignInAndSignUpScreenState().copyState(

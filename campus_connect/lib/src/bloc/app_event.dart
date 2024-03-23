@@ -42,3 +42,14 @@ class RegisterNewUserEvent extends AppEvent{
     required this.controller2
   });
 }
+
+@immutable 
+class LoginUserEvent extends AppEvent{
+  final TextEditingController emailController,
+  passwordController;
+
+  const LoginUserEvent({
+    required this.emailController,
+    required this.passwordController
+  });
+}

@@ -47,5 +47,7 @@ const createAccountString = 'Create an account';
 const confirmPasswordString = 'Confirm password';
 
 const loadingString = 'Loading...';
+const registeringString = 'Registering...';
+const loggingInString = 'Logging in...';
 const unmatchedPasswordString = 'Passwords do not match!';
 const emptyFieldsString = 'Field(s) cannot be empty!';

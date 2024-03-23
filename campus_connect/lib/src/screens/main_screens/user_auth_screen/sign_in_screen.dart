@@ -159,7 +159,14 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       const Gap(20),
                       GenericElevatedButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          context.read<AppBloc>().add(
+                            LoginUserEvent(
+                              emailController: emailController,
+                              passwordController: passwordController
+                            )
+                          );
+                        },
                         title: signInString,
                         backgroundColor: redColor,
                         color: whiteColor,
