@@ -45,3 +45,7 @@ const haveAccountString = 'Already have an account? ';
 const letsGetStartedString = "Let's get started!";
 const createAccountString = 'Create an account';
 const confirmPasswordString = 'Confirm password';
+
+const loadingString = 'Loading...';
+const unmatchedPasswordString = 'Passwords do not match!';
+const emptyFieldsString = 'Field(s) cannot be empty!';

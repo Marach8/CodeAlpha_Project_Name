@@ -22,6 +22,20 @@ class GoToHomeScreenEvent extends AppEvent{
 }
 
 @immutable 
-class GoToLandingScreenView extends AppEvent{
-  const GoToLandingScreenView();
+class GoToLandingScreenViewEvent extends AppEvent{
+  const GoToLandingScreenViewEvent();
+}
+
+@immutable 
+class RegisterNewUserEvent extends AppEvent{
+  final TextEditingController usernameController,
+  emailController, passwordController,
+  confirmPasswordController;
+
+  const RegisterNewUserEvent({
+    required this.usernameController,
+    required this.emailController,
+    required this.passwordController,
+    required this.confirmPasswordController
+  });
 }

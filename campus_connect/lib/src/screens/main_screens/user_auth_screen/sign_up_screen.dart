@@ -105,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: GestureDetector(
                           onTap: (){
                             context.read<AppBloc>().add(
-                              const GoToLandingScreenView()
+                              const GoToLandingScreenViewEvent()
                             );
                           },
                           child: const Icon(Icons.keyboard_arrow_left_sharp),
@@ -175,7 +175,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       const Gap(15),
                       GenericElevatedButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          context.read<AppBloc>().add(
+                            RegisterNewUserEvent(
+                              usernameController: usernameController,
+                              emailController: emailController,
+                              passwordController: passwordController, 
+                              confirmPasswordController: confirmPasswordController
+                            )
+                          );
+                        },
                         title: signUpString,
                         backgroundColor: redColor,
                         color: whiteColor,

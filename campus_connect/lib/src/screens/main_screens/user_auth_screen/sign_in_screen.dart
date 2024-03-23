@@ -100,7 +100,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: GestureDetector(
                           onTap: (){
                             context.read<AppBloc>().add(
-                              const GoToLandingScreenView()
+                              const GoToLandingScreenViewEvent()
                             );
                           },
                           child: const Icon(Icons.keyboard_arrow_left_sharp),
