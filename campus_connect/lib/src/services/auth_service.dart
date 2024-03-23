@@ -29,7 +29,7 @@ class AuthService{
         userId: currentUser!.uid
       );
       await cloudStore.collection(usersString).add(userPayload);
-      await verifyUserEmail();
+      //await verifyUserEmail();
       await currentUser!.updateDisplayName(username);
       return authSuccessString;
     } on FirebaseAuthException catch(e){

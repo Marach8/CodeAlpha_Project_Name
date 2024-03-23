@@ -28,6 +28,7 @@ class GoToLandingScreenViewEvent extends AppEvent{
 
 @immutable 
 class RegisterNewUserEvent extends AppEvent{
+  final AnimationController controller1, controller2;
   final TextEditingController usernameController,
   emailController, passwordController,
   confirmPasswordController;
@@ -36,6 +37,8 @@ class RegisterNewUserEvent extends AppEvent{
     required this.usernameController,
     required this.emailController,
     required this.passwordController,
-    required this.confirmPasswordController
+    required this.confirmPasswordController,
+    required this.controller1,
+    required this.controller2
   });
 }

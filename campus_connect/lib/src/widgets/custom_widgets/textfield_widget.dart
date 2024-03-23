@@ -37,7 +37,7 @@ class GenericTextField extends StatelessWidget {
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         isDense: true,
         labelStyle: const TextStyle().decorateTextStyle(
-          color: blackColor.withOpacity(0.5),
+          color: blackColor.withOpacity(0.2),
           fontWeight: fontWeight4,
           fontSize: fontSize3half
         ),

@@ -21,9 +21,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AppBloc>(
-      create: (_) => AppBloc()..add(
-        const InitializationEvent()
-      ),
+      create: (_) => AppBloc(),
+      // ..add(
+      //   const InitializationEvent()
+      // ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

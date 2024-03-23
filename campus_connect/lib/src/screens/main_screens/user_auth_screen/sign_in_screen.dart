@@ -120,7 +120,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       GenericTextField(
                         hintText: emailString,
                         controller: emailController,
-                        leadingWidget: const Icon(Icons.email_outlined, color: redColor,),
+                        leadingWidget: const Icon(Icons.email_outlined),
                       ),
                       const Gap(20),
                       ValueListenableBuilder(
@@ -129,7 +129,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           return GenericTextField(
                             hintText: passwordString,
                             controller: passwordController,
-                            leadingWidget: const Icon(Icons.lock_outline_rounded, color: redColor,),
+                            leadingWidget: const Icon(Icons.lock_outline_rounded),
                             suffixIcon: IconButton(
                               onPressed: () => passwordNotifier.value = !passwordNotifier.value,
                               icon: Visibility(

@@ -125,13 +125,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       GenericTextField(
                         hintText: userNameString,
                         controller: usernameController,
-                        leadingWidget: const Icon(Icons.person, color: redColor,),
+                        leadingWidget: const Icon(Icons.person),
                       ),
                       const Gap(15),
                       GenericTextField(
                         hintText: emailString,
                         controller: emailController,
-                        leadingWidget: const Icon(Icons.email_outlined, color: redColor,),
+                        leadingWidget: const Icon(Icons.email_outlined),
                       ),
                       const Gap(15),
                       ValueListenableBuilder(
@@ -140,7 +140,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           return GenericTextField(
                             hintText: passwordString,
                             controller: passwordController,
-                            leadingWidget: const Icon(Icons.lock_outline_rounded, color: redColor,),
+                            leadingWidget: const Icon(Icons.lock_outline_rounded),
                             suffixIcon: IconButton(
                               onPressed: () => passwordNotifier.value = !passwordNotifier.value,
                               icon: Visibility(
@@ -160,7 +160,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           return GenericTextField(
                             hintText: confirmPasswordString,
                             controller: confirmPasswordController,
-                            leadingWidget: const Icon(Icons.lock_outline_rounded, color: redColor,),
+                            leadingWidget: const Icon(Icons.lock_outline_rounded),
                             suffixIcon: IconButton(
                               onPressed: () => confirmPasswordNotifier.value = !confirmPasswordNotifier.value,
                               icon: Visibility(
@@ -181,7 +181,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               usernameController: usernameController,
                               emailController: emailController,
                               passwordController: passwordController, 
-                              confirmPasswordController: confirmPasswordController
+                              confirmPasswordController: confirmPasswordController,
+                              controller1: widget.controller1,
+                              controller2: widget.controller2
                             )
                           );
                         },

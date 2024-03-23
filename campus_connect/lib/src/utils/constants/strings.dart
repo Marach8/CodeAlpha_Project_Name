@@ -34,7 +34,7 @@ const dateFormatString = 'yyyy-MM-dd, hh:mm a';
 
 const authSuccessString = 'Authentication success!';
 const usersString = 'Users';
-const userNotVerifiedString = 'User not verified! Check your for a verification link.';
+const userNotVerifiedString = 'User not verified! Check your email for a verification link.';
 
 const welcomeBackString = 'Welcome back!';
 const loginToAccountString = 'Login to your existing account';

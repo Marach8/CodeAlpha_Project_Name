@@ -4,6 +4,7 @@ import 'package:campus_connect/src/screens/main_screens/home_screen.dart';
 import 'package:campus_connect/src/screens/main_screens/landing_screen.dart';
 import 'package:campus_connect/src/screens/main_screens/user_auth_screen/combination.dart';
 import 'package:campus_connect/src/utils/ui_dialogs/flushbar.dart';
+import 'package:campus_connect/src/utils/ui_dialogs/loading_screen/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,6 +15,22 @@ class BlocConsumerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AppBloc, AppState>(
       listener: (context1, appState){
+        
+        //For Loading Screen
+        final loadingScreen = LoadingScreen();
+        final isLoading = appState.isLoading ?? false;
+        final operation = appState.operation;
+        if(isLoading && operation != null){
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            loadingScreen.showOverlay(
+              context: context1,
+              text: operation
+            );
+          });
+        }
+        else{
+          loadingScreen.hideOverlay();
+        }
 
         //For FlushBar Notifications
         final notification = appState.notification;

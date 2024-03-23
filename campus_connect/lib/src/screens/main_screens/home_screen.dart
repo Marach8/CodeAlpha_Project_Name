@@ -1,3 +1,4 @@
+import 'package:campus_connect/src/widgets/custom_widgets/annotated_region_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GenericAnnotatedRegion(
+      child: Scaffold(
+        body: Container(
+          
+        )
+      ),
+    );
   }
 }

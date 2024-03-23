@@ -15,7 +15,10 @@ class LoadingScreen{
   
   LoadingScreenController? controller;
 
-  void showOverlay(BuildContext context, String text){
+  void showOverlay({
+    required BuildContext context,
+    required String text
+  }){
     if(controller?.updateScreen(text) ?? false){
       return;
     } else{
@@ -67,15 +70,15 @@ class LoadingScreen{
                     const CircularProgressIndicator(
                       color: whiteColor
                     ),
-                    const Gap(15),
+                    const Gap(20),
                     StreamBuilder(
                       stream: textStream.stream,
                       builder: (_, snapshot){
                         if(snapshot.hasData){
                           return Text(snapshot.data!).decorateText(
                             color: whiteColor,
-                            fontWeight: fontWeight4,
-                            fontSize: fontSize2
+                            fontWeight: fontWeight6,
+                            fontSize: fontSize2half
                           );
                         } else{
                           return const SizedBox.shrink();
