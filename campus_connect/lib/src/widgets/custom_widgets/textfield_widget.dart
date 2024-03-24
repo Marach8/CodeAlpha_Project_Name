@@ -114,7 +114,6 @@ class GenericTextField2 extends StatelessWidget {
         fontWeight: fontWeight5,
         fontSize: fontSize3,
       ),
-
     );
   }
 }

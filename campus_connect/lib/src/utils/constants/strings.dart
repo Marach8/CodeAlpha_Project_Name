@@ -55,3 +55,5 @@ const emptyFieldsString = 'Field(s) cannot be empty!';
 const homeString = 'Home';
 const eventsString = 'Events';
 const schedulesString = 'Schedules';
+const searchString = 'Search';
+const campusConnectString = 'Campus Connect';

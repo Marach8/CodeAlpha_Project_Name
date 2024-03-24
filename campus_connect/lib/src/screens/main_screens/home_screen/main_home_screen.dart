@@ -5,6 +5,7 @@ import 'package:campus_connect/src/utils/constants/fontweights.dart';
 import 'package:campus_connect/src/utils/constants/strings.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/annotated_region_widget.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/text_widget.dart';
+import 'package:campus_connect/src/widgets/custom_widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,10 +19,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin{
   late TabController controller;
   late ValueNotifier<bool> valueNotifier;
+  late TextEditingController textEditingController;
 
   @override
   void initState(){
     super.initState();
+    textEditingController = TextEditingController();
     controller = TabController(
       length: 3,
       vsync: this
@@ -39,83 +42,111 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     });
   }
 
+  @override 
+  void dispose(){
+    textEditingController.dispose();
+    controller.dispose();
+    valueNotifier.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GenericAnnotatedRegion(
       child: Scaffold(
         appBar: AppBar(
+          //backgroundColor: redColor.shade100,//Color.fromARGB(150, 150, 50, 50),
+          centerTitle: true,
           title: ValueListenableBuilder(
             valueListenable: valueNotifier,
             builder: (_, value, __) => Visibility(
-              visible: value,
+              visible: !value,
+              replacement: GenericTextField2(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                controller: textEditingController,
+                hintText: searchString,
+              ),
               child: const GenericText(
-                fontSize: fontSize2half,
+                fontSize: fontSize3half,
                 fontWeight: fontWeight5,
-                text: homeString
+                text: campusConnectString
               ),
             ),
           )
         ),
-        body: DefaultTabController(
-          length: 3,
-          child: Column(
-            children: [
-              TabBar(
-                unselectedLabelColor: blackColor,
-                dividerColor: whiteColor,
-                indicatorColor: redColor,
-                splashBorderRadius: const BorderRadius.all(Radius.circular(100)),
-                dividerHeight: 0,
-                overlayColor: MaterialStatePropertyAll(redColor.withOpacity(0.5)),
-                tabs: const [
-                  Tab(
-                    icon: FaIcon(FontAwesomeIcons.house),
-                    iconMargin: EdgeInsets.zero,
-                    child: GenericText(
-                      fontSize: fontSize2half,
-                      fontWeight: fontWeight5,
-                      text: homeString
-                    ),
-                  ),
-                  Tab(
-                    icon: FaIcon(FontAwesomeIcons.clock),
-                    iconMargin: EdgeInsets.zero,
-                    child: GenericText(
-                      fontSize: fontSize2half,
-                      fontWeight: fontWeight5,
-                      text: eventsString
-                    ),
-                  ),
-                  Tab(
-                    icon: FaIcon(FontAwesomeIcons.calendarDays),
-                    iconMargin: EdgeInsets.zero,
-                    child: GenericText(
-                      fontSize: fontSize2half,
-                      fontWeight: fontWeight5,
-                      text: schedulesString
-                    ),
-                  ),
-                ],
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                universityJpg,
               ),
-              
-              Expanded(
-                child: TabBarView(
+              fit: BoxFit.cover
+            )
+          ),
+          child: DefaultTabController(
+            length: 3,
+            child: Column(
+              children: [
+                TabBar(
                   controller: controller,
-                  children: const [
-                    Center(
-                      child: Text('Tab1')
+                  unselectedLabelColor: blackColor,
+                  dividerColor: whiteColor,
+                  indicatorColor: redColor,
+                  splashBorderRadius: const BorderRadius.all(Radius.circular(100)),
+                  dividerHeight: 0,
+                  overlayColor: MaterialStatePropertyAll(redColor.withOpacity(0.5)),
+                  tabs: const [
+                    Tab(
+                      icon: FaIcon(FontAwesomeIcons.house),
+                      iconMargin: EdgeInsets.zero,
+                      child: GenericText(
+                        fontSize: fontSize2half,
+                        fontWeight: fontWeight5,
+                        text: homeString
+                      ),
                     ),
-                    Center(
-                      child: Text('Tab2')
+                    Tab(
+                      icon: FaIcon(FontAwesomeIcons.clock),
+                      iconMargin: EdgeInsets.zero,
+                      child: GenericText(
+                        fontSize: fontSize2half,
+                        fontWeight: fontWeight5,
+                        text: eventsString
+                      ),
                     ),
-                    Center(
-                      child: Text('Tab3')
+                    Tab(
+                      icon: FaIcon(FontAwesomeIcons.calendarDays),
+                      iconMargin: EdgeInsets.zero,
+                      child: GenericText(
+                        fontSize: fontSize2half,
+                        fontWeight: fontWeight5,
+                        text: schedulesString
+                      ),
                     ),
-                  ]
+                  ],
+                ),
+                
+                Expanded(
+                  child: TabBarView(
+                    controller: controller,
+                    children: [
+                      Center(
+                        child: Container(
+                          child: Text('20'),
+                        )
+                      ),
+                      Center(
+                        child: Text('Tab2')
+                      ),
+                      Center(
+                        child: Text('Tab3')
+                      ),
+                    ]
+                  )
                 )
-              )
-            ],
-          )
+              ],
+            )
+          ),
         ),
         drawer: const DrawerScreen(),
       ),
