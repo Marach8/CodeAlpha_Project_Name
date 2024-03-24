@@ -58,5 +58,23 @@ class InSignInAndSignUpScreenState extends AppState{
 
 @immutable 
 class InHomeScreenState extends AppState{
-  InHomeScreenState();
+  InHomeScreenState({
+    super.isLoading,
+    super.operation,
+    super.notification,
+    super.showNotification
+  });
+
+  InHomeScreenState copyState({
+    String? operation,
+    String? notification,
+    bool? isLoading,
+    bool? showNotification
+  }) =>
+    InHomeScreenState(
+      isLoading: isLoading ?? this.isLoading,
+      notification: notification ?? this.notification,
+      operation: operation ?? this.operation,
+      showNotification: showNotification ?? this.showNotification
+    );
 }

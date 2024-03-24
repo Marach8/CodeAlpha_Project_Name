@@ -3,7 +3,7 @@ import 'package:campus_connect/src/bloc/app_event.dart';
 import 'package:campus_connect/src/bloc/app_state.dart';
 import 'package:campus_connect/src/services/auth_service.dart';
 import 'package:campus_connect/src/utils/constants/strings.dart';
-import 'dart:developer' as marach show log;
+//import 'dart:developer' as marach show log;
 
 
 class AppBloc extends Bloc<AppEvent, AppState>{
@@ -13,14 +13,15 @@ class AppBloc extends Bloc<AppEvent, AppState>{
 
     final authService = AuthService();
     
-    // on<InitializationEvent>((_, emit){
-    //   emit(
-    //     InLandingScreenState(
-    //       isLoading: true,
-    //       operation: initializingString
-    //     )
-    //   );
-    // });
+    on<InitializationEvent>((_, emit){
+      final currentUserExist = authService.currentUser != null;
+      if(currentUserExist){
+        emit(InHomeScreenState());
+      }
+      else{
+        emit(InLandingScreenState());
+      }
+    });
 
     on<GoToSignInAndSignUpEvent>((_, emit){
       emit(InSignInAndSignUpScreenState());
@@ -69,7 +70,6 @@ class AppBloc extends Bloc<AppEvent, AppState>{
           } 
           //authentication failed.
           else{
-            marach.log(authResult);
             emit(
               InSignInAndSignUpScreenState(
                 notification: authResult,
@@ -124,10 +124,10 @@ class AppBloc extends Bloc<AppEvent, AppState>{
             )
           );
 
+          emit(InHomeScreenState());
         } 
         //authentication failed.
         else{
-          marach.log(authResult);
           emit(
             InSignInAndSignUpScreenState(
               notification: authResult,
