@@ -6,6 +6,7 @@ import 'package:campus_connect/src/utils/constants/strings.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/annotated_region_widget.dart';
 import 'package:campus_connect/src/widgets/custom_widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,13 +15,46 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin{
+  late TabController controller;
+  late ValueNotifier<bool> valueNotifier;
+
+  @override
+  void initState(){
+    super.initState();
+    controller = TabController(
+      length: 3,
+      vsync: this
+    );
+
+    valueNotifier = ValueNotifier(false);
+
+    controller.addListener(() {
+      if(controller.index == 1 || controller.index == 2){
+        valueNotifier.value = true;
+      }
+      else{
+        valueNotifier.value = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return GenericAnnotatedRegion(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Hello')
+          title: ValueListenableBuilder(
+            valueListenable: valueNotifier,
+            builder: (_, value, __) => Visibility(
+              visible: value,
+              child: const GenericText(
+                fontSize: fontSize2half,
+                fontWeight: fontWeight5,
+                text: homeString
+              ),
+            ),
+          )
         ),
         body: DefaultTabController(
           length: 3,
@@ -35,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 overlayColor: MaterialStatePropertyAll(redColor.withOpacity(0.5)),
                 tabs: const [
                   Tab(
-                    icon: Icon(Icons.home_max_outlined),
+                    icon: FaIcon(FontAwesomeIcons.house),
                     iconMargin: EdgeInsets.zero,
                     child: GenericText(
                       fontSize: fontSize2half,
@@ -44,28 +78,30 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Tab(
-                    icon: Icon(Icons.home_max_outlined),
+                    icon: FaIcon(FontAwesomeIcons.clock),
                     iconMargin: EdgeInsets.zero,
                     child: GenericText(
                       fontSize: fontSize2half,
                       fontWeight: fontWeight5,
-                      text: homeString
+                      text: eventsString
                     ),
                   ),
                   Tab(
-                    icon: Icon(Icons.home_max_outlined),
+                    icon: FaIcon(FontAwesomeIcons.calendarDays),
                     iconMargin: EdgeInsets.zero,
                     child: GenericText(
                       fontSize: fontSize2half,
                       fontWeight: fontWeight5,
-                      text: homeString
+                      text: schedulesString
                     ),
                   ),
                 ],
               ),
+              
               Expanded(
                 child: TabBarView(
-                  children: [
+                  controller: controller,
+                  children: const [
                     Center(
                       child: Text('Tab1')
                     ),

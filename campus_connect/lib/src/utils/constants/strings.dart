@@ -53,3 +53,5 @@ const unmatchedPasswordString = 'Passwords do not match!';
 const emptyFieldsString = 'Field(s) cannot be empty!';
 
 const homeString = 'Home';
+const eventsString = 'Events';
+const schedulesString = 'Schedules';

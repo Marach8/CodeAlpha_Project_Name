@@ -27,6 +27,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          tabBarTheme: TabBarTheme(
+            
+          ),
           brightness: Brightness.light,
           useMaterial3: true
         ),
