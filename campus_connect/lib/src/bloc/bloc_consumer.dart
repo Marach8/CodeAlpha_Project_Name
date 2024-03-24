@@ -1,6 +1,6 @@
 import 'package:campus_connect/src/bloc/app_bloc.dart';
 import 'package:campus_connect/src/bloc/app_state.dart';
-import 'package:campus_connect/src/screens/main_screens/home_screen.dart';
+import 'package:campus_connect/src/screens/main_screens/home_screen/main_home_screen.dart';
 import 'package:campus_connect/src/screens/main_screens/landing_screen.dart';
 import 'package:campus_connect/src/screens/main_screens/user_auth_screen/combination.dart';
 import 'package:campus_connect/src/utils/ui_dialogs/flushbar.dart';

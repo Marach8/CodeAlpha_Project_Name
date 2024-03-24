@@ -16,11 +16,11 @@ class GenericAnnotatedRegion extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        systemNavigationBarColor: blackColor,
+        systemNavigationBarColor: whiteColor,
         statusBarColor: transparentColor,
         statusBarIconBrightness: changeStatusBarIconBrightness ?? false
           ? Brightness.light : Brightness.dark,
-        systemNavigationBarIconBrightness: Brightness.light
+        systemNavigationBarIconBrightness: Brightness.dark
       ),
       child: child
     );
