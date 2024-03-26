@@ -1,4 +1,5 @@
 import 'package:campus_connect/src/screens/main_screens/drawer_screen.dart';
+import 'package:campus_connect/src/screens/main_screens/home_screen/tab_views/schedules_view.dart';
 import 'package:campus_connect/src/utils/constants/colors.dart';
 import 'package:campus_connect/src/utils/constants/fontsizes.dart';
 import 'package:campus_connect/src/utils/constants/fontweights.dart';
@@ -129,17 +130,15 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 Expanded(
                   child: TabBarView(
                     controller: controller,
-                    children: [
+                    children: const [
                       Center(
-                        child: Container(
-                          child: Text('20'),
-                        )
+                        child: Text('20')
                       ),
                       Center(
                         child: Text('Tab2')
                       ),
                       Center(
-                        child: Text('Tab3')
+                        child: SchedulesView()
                       ),
                     ]
                   )
