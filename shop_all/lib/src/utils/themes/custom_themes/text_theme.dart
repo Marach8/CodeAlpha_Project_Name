@@ -14,7 +14,7 @@ class AppTextTheme{
     ),
     headlineMedium: const TextStyle().copyWith(
       fontSize: fontSize4half,
-      fontWeight: fontWeight6,
+      fontWeight: fontWeight7,
       color: blackColor
     ),
     headlineSmall: const TextStyle().copyWith(
@@ -76,7 +76,7 @@ class AppTextTheme{
     ),
     headlineMedium: const TextStyle().copyWith(
       fontSize: fontSize4half,
-      fontWeight: fontWeight6,
+      fontWeight: fontWeight7,
       color: whiteColor
     ),
     headlineSmall: const TextStyle().copyWith(

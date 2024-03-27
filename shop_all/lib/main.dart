@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_all/src/utils/constants/colors.dart';
+import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/themes/theme.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const MyHomepage(),
+      home: const OnboardingView(),
     );
   }
 }
@@ -28,8 +28,9 @@ class MyHomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text('Hello')),
       body: Container(
-        color: whiteColor
+        child: Center(child: Text('Hello dear')),
       ),
     );
   }

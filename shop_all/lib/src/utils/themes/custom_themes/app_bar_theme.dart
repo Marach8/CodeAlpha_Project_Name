@@ -34,17 +34,17 @@ class AppAppBarTheme{
     backgroundColor: transparentColor,
     surfaceTintColor: transparentColor,
     iconTheme: IconThemeData(
-      color: blackColor,
+      color: whiteColor,
       size: 24
     ),
     actionsIconTheme: IconThemeData(
-      color: blackColor,
+      color: whiteColor,
       size: 24
     ),
     titleTextStyle: TextStyle(
       fontSize: fontSize3half,
       fontWeight: fontWeight6,
-      color: blackColor
+      color: whiteColor
     )
   );
 }
