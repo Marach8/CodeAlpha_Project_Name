@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_all/src/screens/authentication/login_screen.dart';
 import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/themes/theme.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const OnboardingView(),
+      home: const LoginView(),
     );
   }
 }

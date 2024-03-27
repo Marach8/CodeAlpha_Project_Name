@@ -6,3 +6,10 @@ const welcomeSubtitle2 = "For smooth transaction, choose your preferred payment 
 const welcomeTitle3 = 'Delivery at your door step';
 const welcomeSubtitle3 = 'From Our Doorstep to Yours - Quick, Safe and Contactless Delivery!';
 const skipString = 'Skip';
+
+const welcomeBackString = 'Welcome back!';
+const introString = "Explore a World of Infinite Options and Boundless Convenience";
+const emailString = 'Email';
+const passwordString = 'Password';
+const rememberMeString = 'Remember Me';
+const forgotPasswordString = 'Forgot Password';
