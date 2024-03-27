@@ -5,3 +5,4 @@ const welcomeTitle2 = 'Select Mode of Payment';
 const welcomeSubtitle2 = "For smooth transaction, choose your preferred payment method - Your comfort, our top priority!";
 const welcomeTitle3 = 'Delivery at your door step';
 const welcomeSubtitle3 = 'From Our Doorstep to Yours - Quick, Safe and Contactless Delivery!';
+const skipString = 'Skip';
