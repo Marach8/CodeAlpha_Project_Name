@@ -57,14 +57,41 @@ class LoginView extends StatelessWidget {
                               )
                             ],
                           ),
-                          Text(
-                            forgotPasswordString,
-                            style: Theme.of(context).textTheme.bodySmall
+                          TextButton(
+                            onPressed: (){},
+                            child: const Text(forgotPasswordString),
                           )
                         ],
-                      )
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: (){},
+                          child: const Text(loginString),
+                        ),
+                      ),
+                      const Gap(20),
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton(
+                          onPressed: (){},
+                          style: OutlinedButton.styleFrom(shape: const RoundedRectangleBorder()),
+                          child: const Text(signUpString),
+                        ),
+                      ),
                     ],
                   ),
+                ),
+                const Gap(20),
+                Row(
+                  children: [
+                    const Expanded(child: Divider(indent: 20,)),
+                    Text(
+                      orSignUpWithString,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                    const Expanded(child: Divider(endIndent: 20,))
+                  ]
                 )
               ],
             ),

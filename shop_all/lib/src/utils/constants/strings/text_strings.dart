@@ -13,3 +13,6 @@ const emailString = 'Email';
 const passwordString = 'Password';
 const rememberMeString = 'Remember Me';
 const forgotPasswordString = 'Forgot Password';
+const loginString = 'Login';
+const signUpString = 'create account';
+const orSignUpWithString = 'Or SignUp with';

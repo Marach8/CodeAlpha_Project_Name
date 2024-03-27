@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_all/src/screens/authentication/login_screen.dart';
 
 class OnboardingController extends GetxController{
   static OnboardingController get instance => Get.find();
@@ -16,7 +17,7 @@ class OnboardingController extends GetxController{
 
   void goToNextPage() async{
     if(indexOfCurrentPage.value == 2){
-      //Get.to(LoginScreen());
+      await Get.offAll(const LoginView());
     }
     else{
       await pageController.nextPage(
