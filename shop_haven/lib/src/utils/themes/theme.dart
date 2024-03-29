@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_haven/src/utils/constants/colors.dart';
-import 'package:shop_haven/src/utils/constants/strings.dart';
+import 'package:shop_haven/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_haven/src/utils/themes/custom_themes/app_bar_theme.dart';
 import 'package:shop_haven/src/utils/themes/custom_themes/bottom_sheet_theme.dart';
 import 'package:shop_haven/src/utils/themes/custom_themes/check_box_theme.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_haven/src/utils/themes/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        
-      )
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      home: const MyHomepage(),
+    );
+  }
+}
+
+
+class MyHomepage extends StatelessWidget {
+  const MyHomepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container()
     );
   }
 }
