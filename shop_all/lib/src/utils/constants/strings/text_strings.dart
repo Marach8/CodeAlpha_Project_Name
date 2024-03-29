@@ -16,3 +16,14 @@ const forgotPasswordString = 'Forgot Password';
 const loginString = 'Login';
 const signUpString = 'Create account';
 const orSignUpWithString = 'Or SignUp with';
+
+const createAccountString = 'Hey! You can signup here...';
+const firstNameString = 'FirstName';
+const lastNameString = 'LastName';
+const userNameString = 'Username';
+const phoneString = 'Phone Number';
+const confirmPasswordString = 'Confirm Password';
+const agreeString = 'I agree to ';
+const andString = 'and ';
+const termsOfServiceString = 'Terms Of Service';
+const privacyPolicyString = 'Privacy Policy ';

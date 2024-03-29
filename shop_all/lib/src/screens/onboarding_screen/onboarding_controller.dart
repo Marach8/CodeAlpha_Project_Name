@@ -17,7 +17,7 @@ class OnboardingController extends GetxController{
 
   void goToNextPage() async{
     if(pageController.page == 2.0){
-      await Get.offAll(const LoginView());
+      await Get.offAll(() => const LoginView());
     }
     else{
       await pageController.nextPage(

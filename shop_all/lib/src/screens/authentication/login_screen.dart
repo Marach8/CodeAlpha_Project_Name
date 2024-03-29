@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:shop_all/src/screens/authentication/create_account_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
@@ -77,7 +79,7 @@ class LoginView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
-                          onPressed: (){},
+                          onPressed: ()  => Get.to(() => const CreateAccountView()),
                           child: const Text(signUpString),
                         ),
                       ),
@@ -96,7 +98,7 @@ class LoginView extends StatelessWidget {
                     const Expanded(child: Divider(endIndent: 20,))
                   ]
                 ),
-                
+
                 const Gap(35),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +110,7 @@ class LoginView extends StatelessWidget {
                     const Gap(20),
                     FooterContainer(
                       logoString: facebookLogoString,
-                      onPressed: (){},
+                      onPressed: (){}
                     )
                   ],
                 )
