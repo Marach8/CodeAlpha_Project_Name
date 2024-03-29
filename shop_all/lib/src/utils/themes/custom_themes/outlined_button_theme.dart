@@ -3,35 +3,35 @@ import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/font_sizes.dart';
 import 'package:shop_all/src/utils/constants/font_weights.dart';
 
-class AppElevatedButtonTheme{
-  const AppElevatedButtonTheme._();
+class AppOutlinedButtonTheme{
+  const AppOutlinedButtonTheme._();
 
-  static ElevatedButtonThemeData lightElevatedButtonTheme = ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
+  static OutlinedButtonThemeData lightOutlinedButtonTheme = OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: whiteColor,
-      backgroundColor: blueColor,
+      foregroundColor: blackColor,
+      backgroundColor: transparentColor,
       disabledForegroundColor: greyColor,
       disabledBackgroundColor: greyColor,
-      side: const BorderSide(color: blueColor),
+      side: const BorderSide(color: blackColor),
       padding: const EdgeInsets.symmetric(vertical: 18),
       textStyle: const TextStyle(
         fontSize: fontSize3,
-        color: whiteColor,
+        color: blackColor,
         fontWeight: fontWeight6
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
     )
   );
 
-  static ElevatedButtonThemeData darkElevatedButtonTheme = ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
+  static OutlinedButtonThemeData darkOutlinedButtonTheme = OutlinedButtonThemeData(
+    style: OutlinedButton.styleFrom(
       elevation: 0,
       foregroundColor: whiteColor,
-      backgroundColor: blueColor,
+      backgroundColor: transparentColor,
       disabledForegroundColor: greyColor,
       disabledBackgroundColor: greyColor,
-      side: const BorderSide(color: blueColor),
+      side: const BorderSide(color: whiteColor),
       padding: const EdgeInsets.symmetric(vertical: 18),
       textStyle: const TextStyle(
         fontSize: fontSize3,

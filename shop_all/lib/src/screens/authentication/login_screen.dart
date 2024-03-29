@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
+import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -26,6 +28,7 @@ class LoginView extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall
                 ),
                 const Gap(20),
+
                 Form(
                   child: Column(
                     children: [
@@ -75,23 +78,39 @@ class LoginView extends StatelessWidget {
                         width: double.infinity,
                         child: OutlinedButton(
                           onPressed: (){},
-                          style: OutlinedButton.styleFrom(shape: const RoundedRectangleBorder()),
                           child: const Text(signUpString),
                         ),
                       ),
                     ],
                   ),
                 ),
-                const Gap(20),
+
+                const Gap(40),
                 Row(
                   children: [
                     const Expanded(child: Divider(indent: 20,)),
                     Text(
                       orSignUpWithString,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: Theme.of(context).textTheme.labelSmall,
                     ),
                     const Expanded(child: Divider(endIndent: 20,))
                   ]
+                ),
+                
+                const Gap(35),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FooterContainer(
+                      logoString: googleLogoString,
+                      onPressed: (){},
+                    ),
+                    const Gap(20),
+                    FooterContainer(
+                      logoString: facebookLogoString,
+                      onPressed: (){},
+                    )
+                  ],
                 )
               ],
             ),

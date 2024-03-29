@@ -6,7 +6,9 @@ import 'package:shop_all/src/utils/themes/custom_themes/bottom_sheet_theme.dart'
 import 'package:shop_all/src/utils/themes/custom_themes/check_box_theme.dart';
 import 'package:shop_all/src/utils/themes/custom_themes/chip_theme.dart';
 import 'package:shop_all/src/utils/themes/custom_themes/elevated_button_theme.dart';
+import 'package:shop_all/src/utils/themes/custom_themes/outlined_button_theme.dart';
 import 'package:shop_all/src/utils/themes/custom_themes/text_theme.dart';
+import 'package:shop_all/src/utils/themes/custom_themes/textbutton_theme.dart';
 import 'package:shop_all/src/utils/themes/custom_themes/textfield_theme.dart';
 
 
@@ -25,7 +27,9 @@ class AppTheme{
     bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
     checkboxTheme: AppCheckBoxTheme.lightCheckBoxTheme,
     chipTheme: AppChipTheme.lightChipTheme,
-    inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme
+    inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,
+    outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
+    textButtonTheme: AppTextButtonTheme.lightTextButtonTheme
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -40,6 +44,8 @@ class AppTheme{
     bottomSheetTheme: AppBottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: AppCheckBoxTheme.darkCheckBoxTheme,
     chipTheme: AppChipTheme.darkChipTheme,
-    inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme
+    inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme,
+    outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
+    textButtonTheme: AppTextButtonTheme.darkTextButtonTheme
   );
 }
