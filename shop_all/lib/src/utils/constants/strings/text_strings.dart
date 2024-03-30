@@ -27,3 +27,7 @@ const agreeString = 'I agree to ';
 const andString = 'and ';
 const termsOfServiceString = 'Terms Of Service';
 const privacyPolicyString = 'Privacy Policy ';
+
+const verifyEmailString = 'Verify you email address...';
+const continueString = 'Continue';
+const resendEmailString = 'Resend Email';
