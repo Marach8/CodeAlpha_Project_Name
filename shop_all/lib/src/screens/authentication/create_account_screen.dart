@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
@@ -17,7 +19,7 @@ class CreateAccountView extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         leading: IconButton(
-          onPressed: (){},
+          onPressed: () => Get.back(),
           icon: const Icon(Icons.keyboard_backspace_outlined),
         ),
       ),
@@ -120,7 +122,7 @@ class CreateAccountView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: () => Get.to(() => const VerifyEmailView()),
                           child: const Text(signUpString),
                         ),
                       ),
