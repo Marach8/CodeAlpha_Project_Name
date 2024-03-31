@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
+import 'package:shop_all/src/screens/authentication/login_screen.dart';
+import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rich_text_widget.dart';
+import 'package:shop_all/src/widgets/custom_widgets/success_screen.dart';
 
 class CreateAccountView extends StatelessWidget {
   const CreateAccountView({super.key});
@@ -122,7 +124,24 @@ class CreateAccountView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () => Get.to(() => const VerifyEmailView()),
+                          onPressed: () => Get.to(
+                            () => SendAuthEmailView(
+                              title: verifyEmailString,
+                              subtitle: verifyEmailDetailsString,
+                              buttonText: continueString,
+                              buttonOnPressed: () => Get.to(
+                                () => CustomSuccessScreen(
+                                  title: successfulAccountCreationString,
+                                  subtitle: backToLoginScreenString,
+                                  buttonText: continueString,
+                                  onPressed: () => Get.offAll(
+                                    () => const LoginView()
+                                  )
+                                )
+                              ),
+                              resendEmailTap: (){},
+                            )
+                          ),
                           child: const Text(signUpString),
                         ),
                       ),

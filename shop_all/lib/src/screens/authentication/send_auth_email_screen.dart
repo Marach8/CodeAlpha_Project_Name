@@ -5,20 +5,27 @@ import 'package:shop_all/src/screens/authentication/login_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_view.dart';
-import 'package:shop_all/src/widgets/custom_widgets/success_screen.dart';
 
-class VerifyEmailView extends StatelessWidget {
-  const VerifyEmailView({super.key});
+class SendAuthEmailView extends StatelessWidget {
+  final String title, subtitle,
+  buttonText;
+  final void Function() buttonOnPressed,
+  resendEmailTap;
+
+  const SendAuthEmailView({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.buttonOnPressed,
+    required this.resendEmailTap,
+    required this.buttonText,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // leading: IconButton(
-        //   onPressed: () => Get.back(),
-        //   icon: const Icon(Icons.keyboard_backspace_outlined),
-        // ),
         actions: [
           IconButton(
             onPressed: () => Get.offAll(() => const LoginView()),
@@ -36,30 +43,33 @@ class VerifyEmailView extends StatelessWidget {
               children: [
                 const CustomLottieAnimationView(lottieString: lottie4),
                 Text(
-                  verifyEmailString,
+                  title,
                   style: Theme.of(context).textTheme.headlineMedium,
+                  textAlign: TextAlign.center,
+                ),
+                const Gap(10),
+                Text(
+                  subtitle,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
                 ),
                 const Gap(20),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => Get.to(
-                      () => CustomSuccessScreen(
-                        buttonText: continueString,
-                        title: successfulAccountCreationString,
-                        subtitle: backToLoginScreenString,
-                        onPressed: () => Get.offAll(() => const LoginView()),
-                      )
-                    ),
-                    child: const Text(continueString),
+                    onPressed: buttonOnPressed,
+                    child: Text(buttonText),
                   ),
                 ),
                 const Gap(20),
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: (){},
-                    child: const Text(resendEmailString),
+                    onPressed: resendEmailTap,
+                    child: Text(
+                      resendEmailString,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
                   ),
                 )
               ],

@@ -29,10 +29,18 @@ const termsOfServiceString = 'Terms Of Service';
 const privacyPolicyString = 'Privacy Policy ';
 
 const verifyEmailString = 'Verify you email address...';
+const verifyEmailDetailsString = 'A verification link has been sent to your registered email.';
 const continueString = 'Continue';
-const resendEmailString = 'Resend Email';
+const resendEmailString = "Didn't get an Email?";
 
 const successfulAccountCreationString = 'Account creation successful!';
 const backToLoginScreenString = '''
 Your account has been successfully created and verified. Click on the button below to go back to login page...
 ''';
+
+const forgotPasswordDetailsString = '''
+Enter your registered email below and click on submit to reset your password!
+''';
+const submitString = 'Submit';
+const resetEmailSentString = 'Email for password reset sent!';
+const resetEmailDetailsString = 'A link to reset your password has been sent to your email';
