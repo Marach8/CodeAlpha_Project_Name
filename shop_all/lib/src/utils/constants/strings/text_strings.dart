@@ -31,3 +31,8 @@ const privacyPolicyString = 'Privacy Policy ';
 const verifyEmailString = 'Verify you email address...';
 const continueString = 'Continue';
 const resendEmailString = 'Resend Email';
+
+const successfulAccountCreationString = 'Account creation successful!';
+const backToLoginScreenString = '''
+Your account has been successfully created and verified. Click on the button below to go back to login page...
+''';

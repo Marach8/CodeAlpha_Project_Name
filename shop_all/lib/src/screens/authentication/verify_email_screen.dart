@@ -5,6 +5,7 @@ import 'package:shop_all/src/screens/authentication/login_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_view.dart';
+import 'package:shop_all/src/widgets/custom_widgets/success_screen.dart';
 
 class VerifyEmailView extends StatelessWidget {
   const VerifyEmailView({super.key});
@@ -42,7 +43,14 @@ class VerifyEmailView extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => Get.to(() => const VerifyEmailView()),
+                    onPressed: () => Get.to(
+                      () => CustomSuccessScreen(
+                        buttonText: continueString,
+                        title: successfulAccountCreationString,
+                        subtitle: backToLoginScreenString,
+                        onPressed: () => Get.offAll(() => const LoginView()),
+                      )
+                    ),
                     child: const Text(continueString),
                   ),
                 ),
