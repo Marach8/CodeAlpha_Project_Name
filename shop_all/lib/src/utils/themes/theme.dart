@@ -29,7 +29,7 @@ class AppTheme{
     chipTheme: AppChipTheme.lightChipTheme,
     inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,
     outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
-    textButtonTheme: AppTextButtonTheme.lightTextButtonTheme
+    textButtonTheme: AppTextButtonTheme.lightTextButtonTheme,
   );
 
   static ThemeData darkTheme = ThemeData(

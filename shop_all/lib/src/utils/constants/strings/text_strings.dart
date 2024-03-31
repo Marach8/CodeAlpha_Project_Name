@@ -7,6 +7,8 @@ const welcomeTitle3 = 'Delivery at your door step';
 const welcomeSubtitle3 = 'From Our Doorstep to Yours - Quick, Safe and Contactless Delivery!';
 const skipString = 'Skip';
 
+const emptyString = '';
+
 const welcomeBackString = 'Welcome back!';
 const introString = "Explore a World of Infinite Options and Boundless Convenience";
 const emailString = 'Email';
@@ -44,3 +46,8 @@ Enter your registered email below and click on submit to reset your password!
 const submitString = 'Submit';
 const resetEmailSentString = 'Email for password reset sent!';
 const resetEmailDetailsString = 'A link to reset your password has been sent to your email';
+
+const homeString = 'Home';
+const favouritesString = 'Favourites';
+const profileString = 'Profile';
+const storeString = 'Store';
