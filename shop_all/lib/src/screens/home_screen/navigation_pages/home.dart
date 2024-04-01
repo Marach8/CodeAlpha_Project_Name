@@ -8,6 +8,7 @@ import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
 import 'package:shop_all/src/widgets/custom_widgets/search_container.dart';
+import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 import 'package:shop_all/src/widgets/other_widgets/appbar_actions/items_notifications.dart';
 
 class HomeDestinationView extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeDestinationView extends StatelessWidget {
             CustomClipPath(
               child: Container(
                 width: getScreenWidth(context),
-                height: 300,
+                height: 350,
                 color: blueColor,
                 padding: EdgeInsets.zero,
                 child: Stack(
@@ -56,7 +57,48 @@ class HomeDestinationView extends StatelessWidget {
                           ),
                           actions: const [ShopItemsNotification()],
                         ),
-                        const CustomSearchContainer(text: searchString)
+                        const CustomSearchContainer(text: searchString),
+
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                          child: Column(
+                            children: [
+                              const CustomdSectionHeading(headingText: 'Marach'),
+                              const Gap(20),
+                              
+                              SizedBox(
+                                height: 90,
+                                child: ListView.builder(
+                                  itemCount: 10,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (_, listIndex){
+                                    return Container(
+                                      margin: const EdgeInsets.only(left: 10),
+                                      height: 40,
+                                      width: 60,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          const CustomCircularContainer(
+                                            radius: 60,
+                                            color: whiteColor,
+                                          ),
+                                          const Gap(5),
+                                          Text(
+                                            'friend',
+                                            style: Theme.of(context).textTheme.labelMedium,
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 1,
+                                          )
+                                        ]
+                                      ),
+                                    );
+                                  },
+                                ),
+                              )
+                            ],
+                          ),
+                        )
                       ],
                     )
                   ]
