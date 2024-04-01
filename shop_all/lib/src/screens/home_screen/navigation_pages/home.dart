@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
+import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
-import 'package:shop_all/src/widgets/other_widgets/clipper_class.dart';
+import 'package:shop_all/src/widgets/other_widgets/appbar_actions/items_notifications.dart';
 
 class HomeDestinationView extends StatelessWidget {
   const HomeDestinationView({super.key});
@@ -19,18 +20,35 @@ class HomeDestinationView extends StatelessWidget {
                 height: 400,
                 color: blueColor,
                 padding: EdgeInsets.zero,
-                child: const Stack(
+                child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                       top: -150,
                       right: -250,
                       child: CustomCircularContainer(radius: 400)
                     ),
-                    Positioned(
+                    const Positioned(
                       bottom: -150,
                       right: -250,
                       child: CustomCircularContainer(radius: 400)
                     ),
+                    
+                    CustomAppBar(
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Marach',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                          Text(
+                            'Marach',
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          )
+                        ],
+                      ),
+                      actions: const [ShopItemsNotification()],
+                    )
                   ]
                 ),
               ),
