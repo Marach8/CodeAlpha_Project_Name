@@ -54,3 +54,4 @@ const storeString = 'Store';
 const shopHavenWelcomeString = '🛒ShopHaven🛒';
 const shopHavenIntroString = 'Shop in Heaven while on Earth...';
 const searchString = 'Search Items in Store';
+const popularCategoriesString = 'Popular Categories';

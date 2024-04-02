@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
@@ -63,7 +62,7 @@ class HomeDestinationView extends StatelessWidget {
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Column(
                             children: [
-                              const CustomdSectionHeading(headingText: 'Marach'),
+                              const CustomdSectionHeading(headingText: popularCategoriesString),
                               const Gap(20),
                               
                               SizedBox(
