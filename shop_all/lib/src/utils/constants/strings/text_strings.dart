@@ -55,3 +55,7 @@ const shopHavenWelcomeString = '🛒ShopHaven🛒';
 const shopHavenIntroString = 'Shop in Heaven while on Earth...';
 const searchString = 'Search Items in Store';
 const popularCategoriesString = 'Popular Categories';
+const popularProductString = 'Popular Products';
+
+const featuredProductsString = 'Featured Products';
+const viewAllString = 'View All';

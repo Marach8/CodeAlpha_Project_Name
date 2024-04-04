@@ -58,7 +58,7 @@ class UpperPartOfHomeView extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Column(
                   children: [
-                    const CustomdSectionHeading(headingText: popularCategoriesString),
+                    const CustomSectionHeading(headingText: popularCategoriesString),
                     const Gap(20),
                     
                     SizedBox(

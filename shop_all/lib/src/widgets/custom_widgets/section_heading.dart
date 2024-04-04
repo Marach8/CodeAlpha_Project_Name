@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CustomdSectionHeading extends StatelessWidget {
+class CustomSectionHeading extends StatelessWidget {
   final String headingText;
   final Widget? trailingButton;
 
-  const CustomdSectionHeading({
+  const CustomSectionHeading({
     super.key,
     required this.headingText,
     this.trailingButton
