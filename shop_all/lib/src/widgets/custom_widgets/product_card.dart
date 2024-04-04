@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
@@ -11,46 +10,50 @@ class CustomProductCard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final inDarkMode = isInDarkMode(context);
+    final inDarkMode = isInDarkMode(context);
 
     return Container(
-      margin: EdgeInsets.all(10),
+      width: 180,
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: greyColor,
+        color: inDarkMode ? blackColor : whiteColor,
         boxShadow: [
           BoxShadow(
-            color: redColor.withOpacity(0.1),
-            blurRadius: 50,
-            spreadRadius: 10,
-            offset: const Offset(0, 2)
+            offset: const Offset(0, 2),
+            color: inDarkMode ? whiteColor.withOpacity(0.5) : blackColor.withOpacity(0.5),
+            blurRadius: 1,
+            spreadRadius: 1,
           )
-        ]
+        ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             decoration: BoxDecoration(
-              color: blueColor,
-              borderRadius: BorderRadius.circular(20)
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: inDarkMode ? whiteColor : blackColor,
+                width: 0.1
+              )
             ),
             child: Stack(
               children: [
-                const CustomProductImageView(imageString: sneakersString),
+                const CustomProductImageView(imageString: airJordanShoeString),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: yellowColor
+                        borderRadius: BorderRadius.circular(8),
+                        color: yellowColor.withOpacity(0.7),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(5),
                         child: Text(
                           '60%',
                           style: Theme.of(context).textTheme.bodyMedium,
@@ -66,38 +69,57 @@ class CustomProductCard1 extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(20),
-          Text(
-            'Nike Track suit Block',
-            style: Theme.of(context).textTheme.bodyMedium
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              'Nike Track suit Block',
+              style: Theme.of(context).textTheme.bodyMedium,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
           ),
-          const Gap(15),
-          Text(
-            'Nike',
-            style: Theme.of(context).textTheme.labelMedium
-          ),
-          const Gap(30),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '\$0.0 - \$122.5',
-                style: Theme.of(context).textTheme.headlineMedium
-              ),
-              Container(
-                height: 35,
-                width: 35,
-                decoration: const BoxDecoration(
-                  color: blueColor,
-                  borderRadius: BorderRadiusDirectional.only(
-                    topEnd: Radius.zero,
-                    topStart: Radius.circular(10),
-                    bottomEnd: Radius.circular(10),
-                    bottomStart: Radius.zero
-                  )
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              children: [
+                Text(
+                  'Nike',
+                  style: Theme.of(context).textTheme.labelMedium,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              )
-            ],
+                const Icon(Iconsax.verify5, color: blueColor)
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '\$122.5',
+                  style: Theme.of(context).textTheme.headlineMedium
+                ),
+                Container(
+                  height: 40,
+                  width: 40,
+                  decoration: const BoxDecoration(
+                    color: blueColor,
+                    borderRadius: BorderRadiusDirectional.only(
+                      topEnd: Radius.zero,
+                      topStart: Radius.circular(10),
+                      bottomEnd: Radius.circular(10),
+                      bottomStart: Radius.zero
+                    )
+                  ),
+                  child: IconButton(
+                    onPressed: (){},
+                    icon: const Icon(Iconsax.add),
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),

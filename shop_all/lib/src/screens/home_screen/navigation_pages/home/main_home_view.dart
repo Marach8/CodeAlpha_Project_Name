@@ -11,14 +11,28 @@ class HomeDestinationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomClipPath(child: UpperPartOfHomeView()),
-            CarouselSliderView(),
-            const Gap(20),
-            CustomProductCard1()
+            const CustomClipPath(child: UpperPartOfHomeView()),
+            const CarouselSliderView(),
+            SizedBox(
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 2,
+                  mainAxisSpacing: 1,
+                  mainAxisExtent: 310,
+                ),
+                itemCount: 6,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (_, gridIndex){
+                  return const CustomProductCard1();
+                }
+              ),
+            )
           ],
         ),
       )
