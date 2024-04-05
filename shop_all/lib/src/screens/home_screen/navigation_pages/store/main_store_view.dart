@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/featured_products_view.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/tab_bar.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
@@ -19,52 +20,66 @@ class StoreDestinationView extends StatelessWidget {
   Widget build(BuildContext context) {
     final inDarkMode = isInDarkMode(context);
 
-    return Scaffold(
-      appBar: CustomAppBar(
-        title:Text(
-          storeString,
-          style: Theme.of(context).textTheme.headlineMedium,
+    return DefaultTabController(
+      length: 6,
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title:Text(
+            storeString,
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          actions: const [ShopItemsNotification()],
         ),
-        actions: const [ShopItemsNotification()],
-      ),
-      body: NestedScrollView(
-        headerSliverBuilder: (_, scrollInnerBox){
-          return [
-            SliverAppBar(
-              pinned: true,
-              floating: true,
-              backgroundColor: inDarkMode ? blackColor : whiteColor,
-              expandedHeight: 500,
-              
-              flexibleSpace: ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  const CustomSearchContainer(text: searchString),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    child: CustomSectionHeading(
-                      headingText: featuredProductsString,
-                      trailingButton: TextButton(
-                        onPressed: (){},
-                        child: Text(
-                          viewAllString,
-                          style: Theme.of(context).textTheme.bodyLarge
+        body: NestedScrollView(
+          headerSliverBuilder: (_, scrollInnerBox){
+            return [
+              SliverAppBar(
+                //pinned: true,
+                floating: true,
+                backgroundColor: inDarkMode ? blackColor : whiteColor,
+                expandedHeight: 350,
+                
+                flexibleSpace: ListView(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    const CustomSearchContainer(text: searchString),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      child: CustomSectionHeading(
+                        headingText: featuredProductsString,
+                        trailingButton: TextButton(
+                          onPressed: (){},
+                          child: Text(
+                            viewAllString,
+                            style: Theme.of(context).textTheme.bodyLarge
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    child: FeaturedBrandsSubView(),
-                  )
-                ],
-              ),
-            )
-          ];
-        },
-        body: Container()
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      child: FeaturedBrandsSubView(),
+                    )
+                  ],
+                ),
+      
+                bottom: const TabBarWidget(
+                  tabs: [
+                    Tab(child: Text('Cosmetics'),),
+                    Tab(child: Text('Furniture'),),
+                    Tab(child: Text('Phones'),),
+                    Tab(child: Text('Electronics'),),
+                    Tab(child: Text('Edibles'),),
+                    Tab(child: Text('Cars'),)
+                  ],
+                ),
+              )
+            ];
+          },
+          body: Container()
+        ),
       ),
     );
   }
