@@ -13,7 +13,7 @@ class TabBarWidget extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final inDarkMode = isInDarkMode(context);
-
+    
     return Material(
       color: inDarkMode ? blackColor : whiteColor,
       child: TabBar(
