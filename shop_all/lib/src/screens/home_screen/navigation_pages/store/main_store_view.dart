@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/bottom_tab_views/cosmetics_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/featured_products_grid_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/tab_bar.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
-import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
-import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 import 'package:shop_all/src/widgets/custom_widgets/search_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 import 'package:shop_all/src/widgets/other_widgets/appbar_actions/items_notifications.dart';

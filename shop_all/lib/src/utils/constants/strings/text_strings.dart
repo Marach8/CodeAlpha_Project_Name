@@ -61,3 +61,5 @@ const featuredProductsString = 'Featured Products';
 const viewAllString = 'View All';
 const adidasString = 'Adidas';
 const numberOfProductsString = '108 products available';
+
+const favoriteProductsString = 'Favorite Products';
