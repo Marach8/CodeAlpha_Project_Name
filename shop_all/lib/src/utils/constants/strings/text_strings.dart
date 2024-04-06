@@ -63,3 +63,5 @@ const adidasString = 'Adidas';
 const numberOfProductsString = '108 products available';
 
 const favoriteProductsString = 'Favorite Products';
+
+const accountString = 'My Account';
