@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
@@ -48,7 +49,7 @@ class ProfileDestinationView extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                     trailing: IconButton(
-                      onPressed: (){},
+                      onPressed: () => Get.to(() => const UserProfileView()),
                       icon: const Icon(Iconsax.edit)
                     ),
                   ),

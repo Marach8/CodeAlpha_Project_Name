@@ -65,3 +65,7 @@ const numberOfProductsString = '108 products available';
 const favoriteProductsString = 'Favorite Products';
 
 const accountString = 'My Account';
+const changePhotoString = 'Change Profile Picture';
+const profileInformationString = 'Profile Information';
+const nameString = 'Name';
+const deleteAccountString = 'Delete Account';
