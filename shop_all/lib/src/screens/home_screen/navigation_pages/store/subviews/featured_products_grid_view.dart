@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/product_detail_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/featured_brand_widget.dart';
 
 class FeaturedBrandsSubView extends StatelessWidget {
@@ -18,7 +20,10 @@ class FeaturedBrandsSubView extends StatelessWidget {
       ),
       itemCount: 4,
       itemBuilder: (_, gridIndex) {
-        return const FeaturedBrandWidget();
+        return GestureDetector(
+          onTap: () => Get.to(() => const CustomProductDetailView()),
+          child: const FeaturedBrandWidget()
+        );
       }
     );
   }

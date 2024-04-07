@@ -4,6 +4,7 @@ import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
+import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 
 class CustomProductCard1 extends StatelessWidget {
   const CustomProductCard1({super.key});
@@ -46,20 +47,7 @@ class CustomProductCard1 extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: yellowColor.withOpacity(0.7),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Text(
-                          '60%',
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      )
-                    ),
+                    const RoundEdgeYellowContainer(text: '60%'),
                     IconButton(
                       onPressed: (){},
                       icon: const Icon(Iconsax.heart5, color: redColor)

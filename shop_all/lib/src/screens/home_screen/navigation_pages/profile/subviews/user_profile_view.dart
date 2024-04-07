@@ -97,11 +97,14 @@ class UserProfileView extends StatelessWidget {
               const Gap(10),
               const Divider(),
               const Gap(10),
-              TextButton(
-                onPressed: (){},
-                child: const Text(
-                  deleteAccountString,
-                  style: TextStyle(color: redColor),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: (){},
+                  child: const Text(
+                    deleteAccountString,
+                    style: TextStyle(color: redColor),
+                  ),
                 ),
               )
             ],
