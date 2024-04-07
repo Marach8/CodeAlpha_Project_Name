@@ -24,13 +24,13 @@ class AppTextTheme{
     ),
 
     titleLarge: const TextStyle().copyWith(
-      fontSize: fontSize3,
-      fontWeight: fontWeightBold,
+      fontSize: fontSize4,
+      fontWeight: fontWeight9,
       color: blackColor
     ),
     titleMedium: const TextStyle().copyWith(
       fontSize: fontSize3,
-      fontWeight: fontWeight5,
+      fontWeight: fontWeightBold,
       color: blackColor
     ),
     titleSmall: const TextStyle().copyWith(
@@ -41,7 +41,7 @@ class AppTextTheme{
 
     bodyLarge: const TextStyle().copyWith(
       fontSize: fontSize3,
-      fontWeight: fontWeight5,
+      fontWeight: fontWeight8,
       color: blackColor
     ),
     bodyMedium: const TextStyle().copyWith(

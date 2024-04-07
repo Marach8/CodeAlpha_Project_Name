@@ -69,3 +69,13 @@ const changePhotoString = 'Change Profile Picture';
 const profileInformationString = 'Profile Information';
 const nameString = 'Name';
 const deleteAccountString = 'Delete Account';
+
+const variationString = 'Variations';
+const colorString = 'Colors';
+const sizeString = 'Sizes';
+const checkoutString = 'CheckOut';
+const descriptionString = 'Description';
+const fullDescriptionString = '''
+Today is a very good day to talk about this particular product because you do not know the capacity of 
+what you are about to to do yourself. I just hope that you'll understand in due time.
+''';

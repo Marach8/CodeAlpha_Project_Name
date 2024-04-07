@@ -8,7 +8,7 @@ class AppChipTheme{
     disabledColor: greyColor.withOpacity(0.5),
     labelStyle: const TextStyle(color: blackColor),
     selectedColor: blueColor,
-    padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
     checkmarkColor: whiteColor
   );
 
@@ -16,7 +16,7 @@ class AppChipTheme{
     disabledColor: greyColor.withOpacity(0.5),
     labelStyle: const TextStyle(color: whiteColor),
     selectedColor: blueColor,
-    padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12.0),
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
     checkmarkColor: whiteColor
   );
 }

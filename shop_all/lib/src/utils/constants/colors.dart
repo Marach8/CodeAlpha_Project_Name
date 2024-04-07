@@ -8,3 +8,4 @@ const transparentColor = Colors.transparent;
 const redColor = Colors.red;
 const orangeColor = Colors.orange;
 const yellowColor = Colors.yellow;
+const greenColor = Colors.green;
