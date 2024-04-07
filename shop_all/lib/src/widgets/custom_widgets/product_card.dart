@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
+import 'package:shop_all/src/widgets/custom_widgets/brand_name_with_verification.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 
@@ -66,19 +67,9 @@ class CustomProductCard1 extends StatelessWidget {
               maxLines: 2,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Row(
-              children: [
-                Text(
-                  'Nike',
-                  style: Theme.of(context).textTheme.labelMedium,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const Icon(Iconsax.verify5, color: blueColor)
-              ],
-            ),
+          const Padding(
+            padding: EdgeInsets.all(5),
+            child: BrandNameWithVerificationWidget(brandName: 'Nike'),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),

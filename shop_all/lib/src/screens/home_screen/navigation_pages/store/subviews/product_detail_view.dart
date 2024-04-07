@@ -4,8 +4,11 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
+import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
+import 'package:shop_all/src/widgets/custom_widgets/brand_name_with_verification.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
+import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 import 'package:shop_all/src/widgets/other_widgets/clipper_class.dart';
 
 class CustomProductDetailView extends StatelessWidget {
@@ -65,9 +68,11 @@ class CustomProductDetailView extends StatelessWidget {
                 )
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -92,6 +97,57 @@ class CustomProductDetailView extends StatelessWidget {
                         onPressed: (){},
                         icon: const Icon(Icons.share),
                       )
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const RoundEdgeYellowContainer(text: '67%'),
+                      const Gap(10),
+                      Text(
+                        '\$500',
+                        style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          decorationThickness: 3,
+                          decorationColor: isInDarkMode(context) ? whiteColor : blackColor
+                        ),
+                      ),
+                      const Gap(10),
+                      Text(
+                        '\$250',
+                        style: Theme.of(context).textTheme.headlineMedium
+                      ),
+                      const Spacer()
+                    ],
+                  ),
+                  const Gap(10),
+                  Text(
+                    'White Ecolag Bag',
+                    style: Theme.of(context).textTheme.bodyMedium
+                  ),
+                  const Gap(15),
+                  Row(
+                    children: [
+                      Text(
+                        'Status',
+                        style: Theme.of(context).textTheme.bodyMedium
+                      ),
+                      const Gap(20),
+                      Text(
+                        'In Stock',
+                        style: Theme.of(context).textTheme.headlineSmall
+                      ),
+                    ],
+                  ),
+                  const Gap(20),
+                  const Row(
+                    children: [
+                      CustomProductImageView(
+                        imageString: luggageString,
+                        height: 30,
+                        width: 30,
+                      ),
+                      BrandNameWithVerificationWidget(brandName: 'Nike'),
                     ],
                   )
                 ],
