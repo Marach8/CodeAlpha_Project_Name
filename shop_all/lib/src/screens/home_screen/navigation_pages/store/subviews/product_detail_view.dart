@@ -16,6 +16,7 @@ import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 import 'package:shop_all/src/widgets/other_widgets/clipper_class.dart';
 import 'package:readmore/readmore.dart';
 import 'package:shop_all/src/widgets/other_widgets/product_details_bottom_navbar.dart';
+import 'package:shop_all/src/widgets/other_widgets/product_review.dart';
 import '../../../../../utils/constants/strings/text_strings.dart';
 
 class CustomProductDetailView extends StatelessWidget {
@@ -262,7 +263,7 @@ class CustomProductDetailView extends StatelessWidget {
                   CustomSectionHeading(
                     headingText: 'Review(200)',
                     trailingButton: IconButton(
-                      onPressed: (){},
+                      onPressed: () => Get.to(() => const ProductReviewScreen()),
                       icon: const Icon(Iconsax.activity),
                     ),
                   )

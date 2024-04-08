@@ -79,3 +79,8 @@ const fullDescriptionString = '''
 Today is a very good day to talk about this particular product because you do not know the capacity of 
 what you are about to to do yourself. I just hope that you'll understand in due time.
 ''';
+const reviewsRatingString = 'Reviews and Ratings';
+
+const fullRatingString = '''
+Note: All reviews and ratings are authenticated and originate from users who utilize the same device as you.
+''';
