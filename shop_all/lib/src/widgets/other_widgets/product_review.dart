@@ -5,6 +5,8 @@ import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar_leading.dart';
 import 'package:shop_all/src/widgets/custom_widgets/numbered_rating_bar.dart';
+import 'package:shop_all/src/widgets/custom_widgets/star_rating_indicator.dart';
+import 'package:shop_all/src/widgets/other_widgets/user_comment_and_reply.dart';
 
 
 class ProductReviewScreen extends StatelessWidget {
@@ -25,6 +27,7 @@ class ProductReviewScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
@@ -72,7 +75,20 @@ class ProductReviewScreen extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              const Gap(10),
+              const CustomStarRatingIndicator(rating: 5),
+              Text(
+                '150.54',
+                style: Theme.of(context).textTheme.headlineSmall
+              ),
+              const Gap(20),
+              const CustomUserCommentAndReply(),
+              const Gap(40),
+              const CustomUserCommentAndReply(),
+              const Gap(40),
+              const CustomUserCommentAndReply(),
+              const Gap(40),
             ]
           ),
         ),

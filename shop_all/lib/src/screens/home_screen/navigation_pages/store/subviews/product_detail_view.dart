@@ -11,10 +11,10 @@ import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/brand_name_with_verification.dart';
 import 'package:shop_all/src/widgets/custom_widgets/container_with_border.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
+import 'package:shop_all/src/widgets/custom_widgets/read_more_text.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 import 'package:shop_all/src/widgets/other_widgets/clipper_class.dart';
-import 'package:readmore/readmore.dart';
 import 'package:shop_all/src/widgets/other_widgets/product_details_bottom_navbar.dart';
 import 'package:shop_all/src/widgets/other_widgets/product_review.dart';
 import '../../../../../utils/constants/strings/text_strings.dart';
@@ -251,13 +251,8 @@ class CustomProductDetailView extends StatelessWidget {
                   const Gap(20),
                   const CustomSectionHeading(headingText: descriptionString),
                   const Gap(10),
-                  const ReadMoreText(
-                    fullDescriptionString,
-                    trimCollapsedText: 'show more',
-                    trimExpandedText: 'show less',
-                    trimLines: 1,
-                    trimMode: TrimMode.Line,
-                  ),
+
+                  const CustomReadMoreWidget(text: fullDescriptionString,),
                   const Gap(5),
                   const Divider(),
                   CustomSectionHeading(

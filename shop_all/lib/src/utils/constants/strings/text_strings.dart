@@ -84,3 +84,5 @@ const reviewsRatingString = 'Reviews and Ratings';
 const fullRatingString = '''
 Note: All reviews and ratings are authenticated and originate from users who utilize the same device as you.
 ''';
+const review1String = 'I like this application very well and I would want to commend the builder. ';
+const review1ResponseSTring = 'Thank you very much for the compliment. We appreciate that you are happy';
