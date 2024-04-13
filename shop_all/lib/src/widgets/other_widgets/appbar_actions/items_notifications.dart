@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
+import 'package:shop_all/src/widgets/other_widgets/cart_view.dart';
 
 class ShopItemsNotification extends StatelessWidget {
   const ShopItemsNotification({super.key});
@@ -10,7 +12,7 @@ class ShopItemsNotification extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-          onPressed: (){},
+          onPressed: () => Get.to(() => const CartView()),
           icon: const Icon(Iconsax.shopping_bag)
         ),
         Positioned(

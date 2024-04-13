@@ -95,3 +95,5 @@ const review1ResponseSTring = 'Thank you very much for the compliment. We apprec
 
 const myAddressesString = 'My Addresses';
 const setAddressString = 'Set your preferred delivery addresses here.';
+
+const cartString = 'Cart';

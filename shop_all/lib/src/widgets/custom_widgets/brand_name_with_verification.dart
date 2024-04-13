@@ -21,7 +21,7 @@ class BrandNameWithVerificationWidget extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         const Gap(5),
-        const Icon(Iconsax.verify5, color: blueColor),
+        const Icon(Iconsax.verify5, color: blueColor, size: 20,),
       ],
     );
   }

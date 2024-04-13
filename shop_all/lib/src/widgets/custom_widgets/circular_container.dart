@@ -16,12 +16,13 @@ class CustomCircularContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       width: radius,
       height: radius,
       padding: EdgeInsets.zero,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
-        color:color ?? whiteColor.withOpacity(0.1)
+        color:color ?? whiteColor.withOpacity(0.2)
       ),
       child: child,
     );
