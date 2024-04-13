@@ -7,6 +7,7 @@ import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rich_text_widget.dart';
+import 'package:shop_all/src/widgets/custom_widgets/row_with_two_textformfields.dart';
 import 'package:shop_all/src/widgets/custom_widgets/success_screen.dart';
 
 class CreateAccountView extends StatelessWidget {
@@ -37,27 +38,11 @@ class CreateAccountView extends StatelessWidget {
                 Form(
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.person_add),
-                                labelText: firstNameString
-                              ),
-                            ),
-                          ),
-                          const Gap(10),
-                          Expanded(
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                prefixIcon: Icon(Icons.person_add),
-                                labelText: lastNameString
-                              ),
-                            ),
-                          ),
-                        ],
+                      const RowWithTwoTextFormFields(
+                        icon1: Icons.person_add,
+                        icon2: Icons.person_add,
+                        hintText1: firstNameString,
+                        hintText2: lastNameString,
                       ),
 
                       const Gap(10),

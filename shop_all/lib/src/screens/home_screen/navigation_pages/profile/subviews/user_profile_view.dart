@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
@@ -17,12 +16,8 @@ class UserProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        leadingWidget: IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(Icons.keyboard_backspace_sharp),
-        ),
-        title: const Text(profileString),
+      appBar: const CustomAppBar(
+        title: Text(profileString),
       ),
 
       body: SingleChildScrollView(

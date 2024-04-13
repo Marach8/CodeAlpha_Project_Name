@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_addresses_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
@@ -69,9 +70,9 @@ class ProfileDestinationView extends StatelessWidget {
                 children: [
                   CustomMenuTileWidget(
                     icon: Iconsax.safe_home,
-                    title: 'My Address',
-                    subtitle: 'Details of my home address',
-                    onTap: (){}
+                    title: myAddressesString,
+                    subtitle: setAddressString,
+                    onTap: () => Get.to(() => const UserAddressView())
                   ),
                   CustomMenuTileWidget(
                     icon: Iconsax.safe_home,

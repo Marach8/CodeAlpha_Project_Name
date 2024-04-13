@@ -24,6 +24,12 @@ const firstNameString = 'FirstName';
 const lastNameString = 'LastName';
 const userNameString = 'Username';
 const phoneString = 'Phone Number';
+const countryString = 'Country';
+const streetString = 'Street';
+const saveString = 'Save';
+const postalCodeString = 'Postal Code';
+const cityString = 'City';
+const stateString = 'State';
 const confirmPasswordString = 'Confirm Password';
 const agreeString = 'I agree to ';
 const andString = 'and ';
@@ -86,3 +92,6 @@ Note: All reviews and ratings are authenticated and originate from users who uti
 ''';
 const review1String = 'I like this application very well and I would want to commend the builder. ';
 const review1ResponseSTring = 'Thank you very much for the compliment. We appreciate that you are happy';
+
+const myAddressesString = 'My Addresses';
+const setAddressString = 'Set your preferred delivery addresses here.';

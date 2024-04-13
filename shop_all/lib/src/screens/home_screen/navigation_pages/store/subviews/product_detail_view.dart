@@ -61,10 +61,6 @@ class CustomProductDetailView extends StatelessWidget {
                     ),
 
                     CustomAppBar(
-                      leadingWidget: IconButton(
-                        onPressed: () => Get.back(),
-                        icon: const Icon(Icons.keyboard_backspace),
-                      ),
                       actions: [
                         IconButton(
                           onPressed: (){},

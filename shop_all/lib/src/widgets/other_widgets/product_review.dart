@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
-import 'package:shop_all/src/widgets/custom_widgets/appbar_leading.dart';
 import 'package:shop_all/src/widgets/custom_widgets/numbered_rating_bar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/star_rating_indicator.dart';
 import 'package:shop_all/src/widgets/other_widgets/user_comment_and_reply.dart';
@@ -20,7 +19,6 @@ class ProductReviewScreen extends StatelessWidget {
           reviewsRatingString,
           style: Theme.of(context).textTheme.headlineMedium
         ),
-        leadingWidget: CustomAppBarLeadingWidget(onPressed: (){}),
       ),
 
       body: SingleChildScrollView(
