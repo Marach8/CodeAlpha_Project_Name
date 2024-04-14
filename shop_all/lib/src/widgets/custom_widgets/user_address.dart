@@ -24,7 +24,7 @@ class UserAddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Get.to(() => const EditAddressView()),
-      child: CustomContainerWithBorder(
+      child: CustomRoundedContainerWithBorder(
         showBackgroundColor: true,
         color: isSelected ? blueColor.withOpacity(0.4) : null,
         child: Stack(

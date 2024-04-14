@@ -69,7 +69,7 @@ class CustomProductCard1 extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.all(5),
-            child: BrandNameWithVerificationWidget(brandName: 'Nike'),
+            child: CustomBrandNameWithVerificationWidget(brandName: 'Nike'),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),

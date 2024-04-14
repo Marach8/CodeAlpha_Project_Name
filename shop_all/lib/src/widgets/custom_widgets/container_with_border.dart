@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 
-class CustomContainerWithBorder extends StatelessWidget {
+class CustomRoundedContainerWithBorder extends StatelessWidget {
   final Widget child;
   final double? borderWidth;
   final bool? hideBorder, showBackgroundColor;
   final Color? color;
 
-  const CustomContainerWithBorder({
+  const CustomRoundedContainerWithBorder({
     super.key,
     required this.child,
     this.borderWidth,

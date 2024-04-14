@@ -3,9 +3,9 @@ import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 
-class BrandNameWithVerificationWidget extends StatelessWidget {
+class CustomBrandNameWithVerificationWidget extends StatelessWidget {
   final String brandName;
-  const BrandNameWithVerificationWidget({
+  const CustomBrandNameWithVerificationWidget({
     super.key,
     required this.brandName
   });

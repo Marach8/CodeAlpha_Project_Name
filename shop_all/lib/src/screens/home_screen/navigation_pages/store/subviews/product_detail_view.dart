@@ -153,12 +153,12 @@ class CustomProductDetailView extends StatelessWidget {
                         height: 30,
                         width: 30,
                       ),
-                      BrandNameWithVerificationWidget(brandName: 'Nike'),
+                      CustomBrandNameWithVerificationWidget(brandName: 'Nike'),
                     ],
                   ),
                   
                   const Gap(20),
-                  CustomContainerWithBorder(
+                  CustomRoundedContainerWithBorder(
                     showBackgroundColor: true,
                     child: Column(
                       children: [

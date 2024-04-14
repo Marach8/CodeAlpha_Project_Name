@@ -12,7 +12,7 @@ class FeaturedBrandWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainerWithBorder(
+    return CustomRoundedContainerWithBorder(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.min,

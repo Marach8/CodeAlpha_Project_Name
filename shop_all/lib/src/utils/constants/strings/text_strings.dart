@@ -97,3 +97,4 @@ const myAddressesString = 'My Addresses';
 const setAddressString = 'Set your preferred delivery addresses here.';
 
 const cartString = 'Cart';
+const paymentMethodString = 'Payment Method';

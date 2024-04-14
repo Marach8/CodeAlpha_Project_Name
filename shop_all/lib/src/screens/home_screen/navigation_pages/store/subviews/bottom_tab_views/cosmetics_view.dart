@@ -22,7 +22,7 @@ class CosmeticsTabView extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          CustomContainerWithBorder(
+          CustomRoundedContainerWithBorder(
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Column(
@@ -76,7 +76,7 @@ class CosmeticsTabView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Expanded(
-                        child: CustomContainerWithBorder(
+                        child: CustomRoundedContainerWithBorder(
                           hideBorder: true,
                           showBackgroundColor: true,
                           child: CustomProductImageView(imageString: airJordanShoeString,),
@@ -84,7 +84,7 @@ class CosmeticsTabView extends StatelessWidget {
                       ),
                       Gap(5),
                       Expanded(
-                        child: CustomContainerWithBorder(
+                        child: CustomRoundedContainerWithBorder(
                           hideBorder: true,
                           showBackgroundColor: true,
                           child: CustomProductImageView(imageString: sneakersString,),
@@ -92,7 +92,7 @@ class CosmeticsTabView extends StatelessWidget {
                       ),
                       Gap(5),
                       Expanded(
-                        child: CustomContainerWithBorder(
+                        child: CustomRoundedContainerWithBorder(
                           hideBorder: true,
                           showBackgroundColor: true,
                           child: CustomProductImageView(imageString: luggageString),

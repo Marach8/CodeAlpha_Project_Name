@@ -12,7 +12,7 @@ class CustomChoiceSizesChipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainerWithBorder(
+    return CustomRoundedContainerWithBorder(
       borderWidth: 1,
       showBackgroundColor: true,
       color: blueColor,

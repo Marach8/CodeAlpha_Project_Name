@@ -43,7 +43,7 @@ class CustomUserCommentAndReply extends StatelessWidget {
         const Gap(10),
         const CustomReadMoreWidget(text: review1String),
         const Gap(20),
-        CustomContainerWithBorder(
+        CustomRoundedContainerWithBorder(
           hideBorder: true,
           showBackgroundColor: true,
           child: Column(
