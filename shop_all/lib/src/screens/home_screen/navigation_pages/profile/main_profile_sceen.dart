@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/order_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_addresses_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
@@ -75,10 +76,10 @@ class ProfileDestinationView extends StatelessWidget {
                     onTap: () => Get.to(() => const UserAddressView())
                   ),
                   CustomMenuTileWidget(
-                    icon: Iconsax.safe_home,
-                    title: 'My Address',
-                    subtitle: 'Details of my home address',
-                    onTap: (){}
+                    icon: Iconsax.wallet,
+                    title: 'My Orders',
+                    subtitle: 'Completed and progressing orders',
+                    onTap: () => Get.to(() => const ProductOrderView())
                   ),
                   CustomMenuTileWidget(
                     icon: Iconsax.safe_home,
