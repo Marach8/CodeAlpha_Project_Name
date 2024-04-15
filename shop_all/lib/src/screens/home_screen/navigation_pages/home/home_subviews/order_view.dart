@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/widgets/custom_widgets/app_bar_title_text.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
-import 'package:shop_all/src/widgets/custom_widgets/container_with_border.dart';
 import 'package:shop_all/src/widgets/other_widgets/product_order_details.dart';
 
 class ProductOrderView extends StatelessWidget {
