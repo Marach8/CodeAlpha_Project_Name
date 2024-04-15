@@ -13,6 +13,7 @@ import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart'
 import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 
+
 class SubCategoriesView extends StatelessWidget {
   const SubCategoriesView({super.key});
 
@@ -46,7 +47,7 @@ class SubCategoriesView extends StatelessWidget {
           SizedBox(
             height: 150,
             child: ListView.separated(
-              separatorBuilder: (context, index) => const Gap(20),
+              separatorBuilder: (_, __) => const Gap(20),
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: 100,
@@ -84,7 +85,7 @@ class SubCategoriesView extends StatelessWidget {
                         ),
                         
                         const Gap(10),
-
+                        
                         SizedBox(
                           width: getScreenWidth(context)/2,
                           child: Column(

@@ -17,7 +17,7 @@ class CustomProductCard1 extends StatelessWidget {
 
     return Container(
       width: 180,
-      margin: const EdgeInsets.all(10),
+      //margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: inDarkMode ? blackColor : whiteColor,
@@ -38,6 +38,7 @@ class CustomProductCard1 extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
+              color: inDarkMode ? whiteColor.withOpacity(0.1) : blackColor.withOpacity(0.07),
               border: Border.all(
                 color: inDarkMode ? whiteColor : blackColor,
                 width: 0.1
@@ -59,6 +60,7 @@ class CustomProductCard1 extends StatelessWidget {
               ],
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
