@@ -6,6 +6,7 @@ import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subv
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/general_products_view.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
+import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 
 
@@ -27,7 +28,13 @@ class HomeDestinationView extends StatelessWidget {
                 onPressed: () => Get.to(() => const GeneralProductsView()),
               ),
             ),
-            const ProductsGridView()
+            ProductsGridView(
+              crossAxisCount: 2,
+              itemCount: 10,
+              itemBuilder: (_, gridIndex){
+                return const CustomProductCard1();
+              },
+            )
           ],
         ),
     );

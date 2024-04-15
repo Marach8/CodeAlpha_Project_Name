@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/bottom_tab_views/cosmetics_view.dart';
+import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/all_brands.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/featured_products_grid_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/tab_bar.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
@@ -40,16 +42,17 @@ class StoreDestinationView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  children: const [
-                    CustomSearchContainer(text: searchString),
+                  children: [
+                    const CustomSearchContainer(text: searchString),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                       child: CustomSectionHeading(
                         headingText: featuredProductsString,
                         showTrailingButton: true,
+                        onPressed: () => Get.to(() => const AllBrandsView()),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                       child: FeaturedBrandsSubView(),
                     )

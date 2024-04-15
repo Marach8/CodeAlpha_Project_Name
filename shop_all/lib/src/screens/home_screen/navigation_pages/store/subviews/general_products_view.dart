@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/products_grid_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/app_bar_title_text.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
+import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 
 class GeneralProductsView extends StatelessWidget {
   const GeneralProductsView({super.key});
@@ -35,7 +36,13 @@ class GeneralProductsView extends StatelessWidget {
           ),
           const Gap(20),
 
-          const ProductsGridView()
+          ProductsGridView(
+            crossAxisCount: 2,
+            itemCount: 10,
+            itemBuilder: (_, gridIndex){
+              return const CustomProductCard1();
+            },
+          )
         ],
       )
     );

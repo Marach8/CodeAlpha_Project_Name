@@ -8,6 +8,7 @@ import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart'
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/container_with_border.dart';
+import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 
@@ -110,7 +111,13 @@ class CosmeticsTabView extends StatelessWidget {
             headingText: 'We Also Have',
             showTrailingButton: true
           ),
-          const ProductsGridView()
+          ProductsGridView(
+            crossAxisCount: 2,
+            itemCount: 10,
+            itemBuilder: (_, gridIndex){
+              return const CustomProductCard1();
+            },
+          )
         ],
       ),
     );

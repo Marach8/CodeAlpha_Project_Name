@@ -6,6 +6,7 @@ import 'package:shop_all/src/screens/home_screen/navigation_pages/home/main_home
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
+import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 
 class FavoriteDestinationView extends StatelessWidget {
   const FavoriteDestinationView({super.key});
@@ -28,10 +29,16 @@ class FavoriteDestinationView extends StatelessWidget {
         ],
       ),
 
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            ProductsGridView()
+            ProductsGridView(
+              crossAxisCount: 2,
+              itemCount: 10,
+              itemBuilder: (_, gridIndex){
+                return const CustomProductCard1();
+              },
+            )
           ]
         ),
       )
