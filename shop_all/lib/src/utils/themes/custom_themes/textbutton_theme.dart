@@ -14,6 +14,7 @@ class AppTextButtonTheme{
       disabledForegroundColor: greyColor,
       disabledBackgroundColor: greyColor,
       textStyle: const TextStyle(
+        backgroundColor: transparentColor,
         fontSize: fontSize3,
         color: blackColor,
         fontWeight: fontWeight3
@@ -30,6 +31,7 @@ class AppTextButtonTheme{
       disabledForegroundColor: greyColor,
       disabledBackgroundColor: greyColor,
       textStyle: const TextStyle(
+        backgroundColor: transparentColor,
         fontSize: fontSize3,
         color: blackColor,
         fontWeight: fontWeight3

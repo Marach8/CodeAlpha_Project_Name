@@ -106,15 +106,9 @@ class CosmeticsTabView extends StatelessWidget {
           ),
 
           const Gap(20),
-          CustomSectionHeading(
+          const CustomSectionHeading(
             headingText: 'We Also Have',
-            trailingButton: TextButton(
-              onPressed: (){},
-              child: Text(
-                viewAllString,
-                style: Theme.of(context).textTheme.bodyLarge
-              ),
-            ),
+            showTrailingButton: true
           ),
           const ProductsGridView()
         ],

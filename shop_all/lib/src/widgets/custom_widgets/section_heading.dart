@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 
 class CustomSectionHeading extends StatelessWidget {
   final String headingText;
-  final Widget? trailingButton;
+  final bool showTrailingButton;
+  final String? buttonTitle;
+  final void Function()? onPressed;
 
   const CustomSectionHeading({
     super.key,
     required this.headingText,
-    this.trailingButton
+    this.showTrailingButton = false,
+    this.buttonTitle,
+    this.onPressed
   });
 
   @override
@@ -21,7 +26,13 @@ class CustomSectionHeading extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        trailingButton ?? const SizedBox.shrink()
+        showTrailingButton ? TextButton(
+          onPressed: onPressed,
+          child: Text(
+            buttonTitle ?? viewAllString,
+            style: Theme.of(context).textTheme.titleMedium,
+          )
+        ): const SizedBox.shrink()
       ],
     );
   }

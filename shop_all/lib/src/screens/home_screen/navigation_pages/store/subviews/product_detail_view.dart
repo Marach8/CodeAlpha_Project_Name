@@ -253,10 +253,9 @@ class CustomProductDetailView extends StatelessWidget {
                   const Divider(),
                   CustomSectionHeading(
                     headingText: 'Review(200)',
-                    trailingButton: IconButton(
-                      onPressed: () => Get.to(() => const ProductReviewScreen()),
-                      icon: const Icon(Iconsax.activity),
-                    ),
+                    showTrailingButton: true,
+                    onPressed: () => Get.to(() => const ProductReviewScreen()),
+                    buttonTitle: 'Check',
                   )
                 ],
               ),

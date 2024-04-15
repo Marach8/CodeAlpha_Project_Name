@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
@@ -7,6 +8,7 @@ import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/search_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 import 'package:shop_all/src/widgets/other_widgets/appbar_actions/items_notifications.dart';
+import 'package:shop_all/src/widgets/other_widgets/sub_categories_view.dart';
 
 class UpperPartOfHomeView extends StatelessWidget {
   const UpperPartOfHomeView({
@@ -44,14 +46,14 @@ class UpperPartOfHomeView extends StatelessWidget {
               
               SizedBox(
                 height: 110,
-                child: ListView.builder(
+                child: ListView.separated(
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  separatorBuilder: (_, __) => const Gap(10),
                   itemBuilder: (_, listIndex){
-                    return Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      height: 40,
-                      width: 60,
+                    return GestureDetector(
+                      onTap: () => Get.to(() => const SubCategoriesView()),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [

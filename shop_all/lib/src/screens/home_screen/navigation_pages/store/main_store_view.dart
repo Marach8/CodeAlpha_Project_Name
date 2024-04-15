@@ -40,22 +40,16 @@ class StoreDestinationView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    const CustomSearchContainer(text: searchString),
+                  children: const [
+                    CustomSearchContainer(text: searchString),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                      padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                       child: CustomSectionHeading(
                         headingText: featuredProductsString,
-                        trailingButton: TextButton(
-                          onPressed: (){},
-                          child: Text(
-                            viewAllString,
-                            style: Theme.of(context).textTheme.bodyLarge
-                          ),
-                        ),
+                        showTrailingButton: true,
                       ),
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                       child: FeaturedBrandsSubView(),
                     )

@@ -4,6 +4,7 @@ import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/brand_name_with_verification.dart';
+import 'package:shop_all/src/widgets/custom_widgets/kite_shaped_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rounded_edge_yellow_container.dart';
 
@@ -80,23 +81,7 @@ class CustomProductCard1 extends StatelessWidget {
                   '\$122.5',
                   style: Theme.of(context).textTheme.headlineMedium
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: const BoxDecoration(
-                    color: blueColor,
-                    borderRadius: BorderRadiusDirectional.only(
-                      topEnd: Radius.zero,
-                      topStart: Radius.circular(10),
-                      bottomEnd: Radius.circular(10),
-                      bottomStart: Radius.zero
-                    )
-                  ),
-                  child: IconButton(
-                    onPressed: (){},
-                    icon: const Icon(Iconsax.add),
-                  ),
-                )
+                const CustomKiteShapedContainerWithAddIcon(color: blueColor)
               ],
             ),
           )

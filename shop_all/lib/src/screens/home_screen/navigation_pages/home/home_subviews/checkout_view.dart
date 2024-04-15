@@ -126,12 +126,10 @@ class CheckOutView extends StatelessWidget {
 
                     const Gap(20),
 
-                    CustomSectionHeading(
+                    const CustomSectionHeading(
                       headingText: paymentMethodString,
-                      trailingButton: TextButton(
-                        onPressed: (){},
-                        child: const Text('Change'),
-                      )
+                      showTrailingButton: true,
+                      buttonTitle: 'Change',
                     ),
                     Row(
                       children: [
@@ -149,12 +147,10 @@ class CheckOutView extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomSectionHeading(
+                        const CustomSectionHeading(
                           headingText: 'Shipping Address',
-                          trailingButton: TextButton(
-                            onPressed: (){},
-                            child: const Text('Change'),
-                          )
+                          showTrailingButton: true,
+                          buttonTitle: 'Change',
                         ),
                         Text(
                           '2C Onuiyi Road, Nsukka',
