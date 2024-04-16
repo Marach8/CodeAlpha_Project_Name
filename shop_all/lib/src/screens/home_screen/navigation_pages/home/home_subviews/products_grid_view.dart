@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 
 class ProductsGridView extends StatelessWidget {
   final int itemCount, 

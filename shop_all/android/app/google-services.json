@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "173760311905",
+    "project_id": "marach-e-commerce-app",
+    "storage_bucket": "marach-e-commerce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173760311905:android:ceaf5a3b157d3da2ff3020",
+        "android_client_info": {
+          "package_name": "com.example.shop_all"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvb05ZbWq_NkLlSggr9luIfPymdOgPecQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
