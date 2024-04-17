@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -52,12 +49,23 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCuytLmYfKI-TamwSYGJXnym0bYR27l-fA',
+    appId: '1:173760311905:web:65d77dde8ded53b0ff3020',
+    messagingSenderId: '173760311905',
+    projectId: 'marach-e-commerce-app',
+    authDomain: 'marach-e-commerce-app.firebaseapp.com',
+    storageBucket: 'marach-e-commerce-app.appspot.com',
+  );
+
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBZqBjUWtlUsemqcjTUPnwrnhInnyaNYw0',
     appId: '1:173760311905:ios:6221d5ffbb64e4d2ff3020',
     messagingSenderId: '173760311905',
     projectId: 'marach-e-commerce-app',
     storageBucket: 'marach-e-commerce-app.appspot.com',
+    androidClientId: '173760311905-lcm4urtlrm0jo96tvtbvnnp20ipnpsqf.apps.googleusercontent.com',
+    iosClientId: '173760311905-4bebp6nq4no306iaftrt6t7lbb7plhfo.apps.googleusercontent.com',
     iosBundleId: 'com.example.shopAll',
   );
 }
