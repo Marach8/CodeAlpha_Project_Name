@@ -21,10 +21,7 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
@@ -55,6 +52,14 @@ class DefaultFirebaseOptions {
     messagingSenderId: '173760311905',
     projectId: 'marach-e-commerce-app',
     authDomain: 'marach-e-commerce-app.firebaseapp.com',
+    storageBucket: 'marach-e-commerce-app.appspot.com',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyCvb05ZbWq_NkLlSggr9luIfPymdOgPecQ',
+    appId: '1:173760311905:android:ceaf5a3b157d3da2ff3020',
+    messagingSenderId: '173760311905',
+    projectId: 'marach-e-commerce-app',
     storageBucket: 'marach-e-commerce-app.appspot.com',
   );
 

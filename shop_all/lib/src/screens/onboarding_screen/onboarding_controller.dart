@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:shop_all/src/screens/authentication/login_screen.dart';
+import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 
 class OnboardingController extends GetxController{
   static OnboardingController get instance => Get.find();
@@ -17,6 +19,8 @@ class OnboardingController extends GetxController{
 
   void goToNextPage() async{
     if(pageController.page == 2.0){
+      final storage = GetStorage();
+      await storage.write(isFirstTimeKey, false);
       await Get.offAll(() => const LoginView());
     }
     else{
