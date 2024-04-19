@@ -98,3 +98,10 @@ const setAddressString = 'Set your preferred delivery addresses here.';
 
 const cartString = 'Cart';
 const paymentMethodString = 'Payment Method';
+
+const numbers0to9 = '0123456789';
+const emptyFieldString = 'Field cannot be empty!';
+const atSignString = '@';
+const missingAtSignString = 'Field must contain "@" sign';
+const weakPasswordString = 'Field must contain at least a digit and a special character';
+const invalidPhoneNumberString = 'Please enter a valid phone number!';

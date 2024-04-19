@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/authentication/login_screen.dart';
+import 'package:shop_all/src/backend/authentication/sign_up/sign_up_controller.dart';
+import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
@@ -15,6 +16,8 @@ class CreateAccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -26,6 +29,7 @@ class CreateAccountView extends StatelessWidget {
           icon: const Icon(Icons.keyboard_backspace_outlined),
         ),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Center(
@@ -36,6 +40,7 @@ class CreateAccountView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Form(
+                  key: controller.signUpFormKey,
                   child: Column(
                     children: [
                       const RowWithTwoTextFormFields(
@@ -47,27 +52,34 @@ class CreateAccountView extends StatelessWidget {
 
                       const Gap(10),
                       TextFormField(
+                        controller: controller.usernameController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.person_add),
                           labelText: userNameString
                         ),
                       ),
                       const Gap(10),
+
                       TextFormField(
+                        controller: controller.emailController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.email_rounded),
                           labelText: emailString
                         ),
                       ),
                       const Gap(10),
+
                       TextFormField(
+                        controller: controller.phoneNumberController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.phone),
                           labelText: phoneString
                         ),
                       ),
                       const Gap(10),
+
                       TextFormField(
+                        controller: controller.passwordController,
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.lock_outline_rounded),
                           suffixIcon: Icon(Icons.visibility),
@@ -75,6 +87,7 @@ class CreateAccountView extends StatelessWidget {
                         ),
                       ),
                       const Gap(10),
+
                       TextFormField(
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.lock_outline_rounded),
