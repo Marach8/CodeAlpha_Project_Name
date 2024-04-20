@@ -6,6 +6,7 @@ import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
+import 'package:shop_all/src/utils/functions/textformfield_validator_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/rich_text_widget.dart';
 import 'package:shop_all/src/widgets/custom_widgets/row_with_two_textformfields.dart';
@@ -39,20 +40,26 @@ class CreateAccountView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
                 Form(
                   key: controller.signUpFormKey,
                   child: Column(
                     children: [
-                      const RowWithTwoTextFormFields(
+                      RowWithTwoTextFormFields(
                         icon1: Icons.person_add,
                         icon2: Icons.person_add,
                         hintText1: firstNameString,
                         hintText2: lastNameString,
+                        controller1: controller.firstNameController,
+                        controller2: controller.lastNameController,
+                        validator1: (value) => validateForm(value: value),
+                        validator2: (value) => validateForm(value: value)
                       ),
 
                       const Gap(10),
                       TextFormField(
                         controller: controller.usernameController,
+                        validator: (value) => validateForm(value: value),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.person_add),
                           labelText: userNameString
@@ -62,6 +69,10 @@ class CreateAccountView extends StatelessWidget {
 
                       TextFormField(
                         controller: controller.emailController,
+                        validator: (value) => validateForm(
+                          value: value,
+                          specialEmailCheck: true
+                        ),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.email_rounded),
                           labelText: emailString
@@ -71,6 +82,10 @@ class CreateAccountView extends StatelessWidget {
 
                       TextFormField(
                         controller: controller.phoneNumberController,
+                        validator: (value) => validateForm(
+                          value: value,
+                          specialPhoneNumberCheck: true
+                        ),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.phone),
                           labelText: phoneString
@@ -80,6 +95,10 @@ class CreateAccountView extends StatelessWidget {
 
                       TextFormField(
                         controller: controller.passwordController,
+                        validator: (value) => validateForm(
+                          value: value,
+                          specialPasswordCheck: true
+                        ),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.lock_outline_rounded),
                           suffixIcon: Icon(Icons.visibility),
@@ -95,7 +114,9 @@ class CreateAccountView extends StatelessWidget {
                           labelText: confirmPasswordString
                         ),
                       ),
+                      
                       const Gap(10),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -118,6 +139,7 @@ class CreateAccountView extends StatelessWidget {
                           )
                         ],
                       ),
+                      
                       const Gap(20),
                       SizedBox(
                         width: double.infinity,

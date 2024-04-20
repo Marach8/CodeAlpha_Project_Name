@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
-import 'package:shop_all/src/widgets/custom_widgets/lottie_view.dart';
+import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 
 class SendAuthEmailView extends StatelessWidget {
   final String title, subtitle,

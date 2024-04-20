@@ -14,7 +14,7 @@ bool phoneNumberIsOkay(String phoneNumber){
 String? validateForm({
   required String? value,
   bool? specialEmailCheck,
-  bool? specialpasswordCheck,
+  bool? specialPasswordCheck,
   bool? specialPhoneNumberCheck
 }){
   if(value == null || value.isEmpty){
@@ -25,7 +25,7 @@ String? validateForm({
     return missingAtSignString;
   }
 
-  else if(specialpasswordCheck != null && !passwordIsStrong(value)){
+  else if(specialPasswordCheck != null && !passwordIsStrong(value)){
     return weakPasswordString;
   }
 

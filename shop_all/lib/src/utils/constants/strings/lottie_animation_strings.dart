@@ -5,3 +5,4 @@ const lottie4 = 'assets/lottie/lottie_file4.json';
 const lottie5 = 'assets/lottie/lottie_file5.json';
 const lottie6 = 'assets/lottie/lottie_file6.json';
 const lottie7 = 'assets/lottie/lottie_file7.json';
+const bikeRiderLottie = 'assets/lottie/bike_rider.json';

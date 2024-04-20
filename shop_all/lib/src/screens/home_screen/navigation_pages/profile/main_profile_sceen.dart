@@ -10,7 +10,7 @@ import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
-import 'package:shop_all/src/widgets/custom_widgets/lottie_view.dart';
+import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/menu_tile.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 

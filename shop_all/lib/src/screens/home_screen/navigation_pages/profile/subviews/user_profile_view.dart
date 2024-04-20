@@ -6,7 +6,7 @@ import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.da
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
-import 'package:shop_all/src/widgets/custom_widgets/lottie_view.dart';
+import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/profile_menu_row.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 
