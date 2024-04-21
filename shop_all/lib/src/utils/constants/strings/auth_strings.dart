@@ -8,3 +8,4 @@ To sign up, you must have read and accepted our privacy policy and terms of serv
 const noConnectionString = 'No Internet Connection!...';
 const unmatchedPasswordsString = 'Passwords Do Not Match!';
 const unmatchedPasswordsSubtitleString = 'The two password fields must match...';
+const usersString = 'Users';
