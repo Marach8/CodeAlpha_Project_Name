@@ -141,7 +141,12 @@ class CreateAccountView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Checkbox(value: true, onChanged: (value){}),
+                          Obx(
+                            () => Checkbox(
+                              value: controller.privacyPolicyCheck.value, 
+                              onChanged: (value) => controller.privacyPolicyCheck.value = value ?? false
+                            )
+                          ),
                           Expanded(
                             child: RichTextWidget(
                               children: [

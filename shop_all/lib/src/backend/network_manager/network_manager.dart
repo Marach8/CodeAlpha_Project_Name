@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
+import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
+import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/dialogs/snackbar.dart';
 
 class NetworkManager extends GetxController{
@@ -23,10 +25,10 @@ class NetworkManager extends GetxController{
     _connectivityStatus.value =  result;
     if(result.contains(ConnectivityResult.none)){
       showAppSnackbar(
-        title: 'No Internet Connection!...',
-        message: '',
+        title: noConnectionString,
+        message: emptyString,
         icon: Iconsax.warning_2,
-        color: redColor
+        backgroundColor: redColor
       );
     }
   }

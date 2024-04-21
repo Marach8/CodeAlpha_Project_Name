@@ -1,10 +1,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/font_sizes.dart';
 import 'package:shop_all/src/utils/constants/font_weights.dart';
 import 'package:shop_all/src/utils/extensions/decorate_textspan.dart';
+import 'package:shop_all/src/utils/functions/helper_functions.dart';
 
 class RichTextWidget extends StatelessWidget {
   final List<dynamic> children;
@@ -38,7 +40,7 @@ class RichTextWidget extends StatelessWidget {
               return TextSpan(
                 text: child as String
               ).decorateTextSpan(
-                color: blackColor,
+                color: isInDarkMode(context) ? whiteColor : blackColor,
                 fontWeight: fontWeight4,
                 fontSize: fontSize3
               );
