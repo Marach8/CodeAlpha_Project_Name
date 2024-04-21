@@ -79,14 +79,7 @@ class SignUpController extends GetxController{
       await userRepository.saveUserData(userModel: userModel);
 
       hideLoadingScreen();
-
-      showAppSnackbar(
-        title: emptyString,
-        message: successfulAccountCreationString,
-        icon: Iconsax.check,
-        backgroundColor: blueColor,
-        duration: 3
-      );
+      
       Get.to(
         () => SendAuthEmailView(
           title: verifyEmailString,

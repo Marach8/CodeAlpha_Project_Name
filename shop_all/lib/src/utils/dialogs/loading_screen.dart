@@ -19,7 +19,12 @@ void showLoadingScreen(String text, String lottiePath){
           child: Column(
             children: [
               const Gap(250),
-              CustomLottieAnimationView(lottieString: lottiePath)
+              CustomLottieAnimationView(lottieString: lottiePath),
+              const Gap(20),
+              Text(
+                text,
+                style: Theme.of(Get.context!).textTheme.bodyLarge
+              )
             ],
           ),
         )
