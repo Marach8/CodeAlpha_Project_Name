@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:shop_all/src/backend/authentication/email_verification/verify_email_controller.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
@@ -8,13 +9,14 @@ import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 
 class SendAuthEmailView extends StatelessWidget {
   final String title, subtitle,
-  buttonText;
+  buttonText, userEmail;
   final void Function() buttonOnPressed,
   resendEmailTap;
 
   const SendAuthEmailView({
     super.key,
     required this.title,
+    required this.userEmail,
     required this.subtitle,
     required this.buttonOnPressed,
     required this.resendEmailTap,
@@ -23,6 +25,8 @@ class SendAuthEmailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SendAuthEmailController());
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -57,7 +61,7 @@ class SendAuthEmailView extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: buttonOnPressed,
+                    onPressed: () => controller.checkEmailVerificationStatus(),
                     child: Text(buttonText),
                   ),
                 ),
@@ -65,7 +69,7 @@ class SendAuthEmailView extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: resendEmailTap,
+                    onPressed: () => controller.sendAuthVerificationEmail(),
                     child: Text(
                       resendEmailString,
                       style: Theme.of(context).textTheme.bodyLarge,

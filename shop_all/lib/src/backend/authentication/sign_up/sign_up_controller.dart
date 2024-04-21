@@ -6,7 +6,7 @@ import 'package:shop_all/src/backend/authentication/auth_repository.dart';
 import 'package:shop_all/src/backend/network_manager/network_manager.dart';
 import 'package:shop_all/src/backend/user/user_repository.dart';
 import 'package:shop_all/src/models/user_model.dart';
-import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
+import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
@@ -79,9 +79,17 @@ class SignUpController extends GetxController{
       await userRepository.saveUserData(userModel: userModel);
 
       hideLoadingScreen();
-      
+
+      showAppSnackbar(
+        title: 'Congratulations',
+        message: successfulAccountCreationString,
+        icon: Iconsax.check,
+        backgroundColor: blueColor,
+      );
+
       Get.to(
         () => SendAuthEmailView(
+          userEmail: emailController.text.trim(),
           title: verifyEmailString,
           subtitle: verifyEmailDetailsString,
           buttonText: continueString,
@@ -102,15 +110,13 @@ class SignUpController extends GetxController{
 
     }
     catch(e){
+      hideLoadingScreen();
       showAppSnackbar(
         title: errorOccuredString,
         message: e.toString(),
         icon: Icons.cancel,
         backgroundColor: redColor, 
       );
-    }
-    finally{
-      hideLoadingScreen();
     }
   }
 }

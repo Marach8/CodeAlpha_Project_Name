@@ -37,9 +37,24 @@ class AuthRepository extends GetxController{
     on FirebaseAuthException catch(e){
       throw e.code;
     }
-    // on PlatformException catch(e){
-    //   throw e.code;
-    // }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+  Future<void> sendAuthVerificationEmail()async{
+    try{
+      await _cloudAuth.currentUser?.sendEmailVerification();
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
     catch(e){
       throw e.toString();
     }

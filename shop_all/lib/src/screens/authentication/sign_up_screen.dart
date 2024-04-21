@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:shop_all/src/backend/authentication/sign_up/sign_up_controller.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
-import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
+import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/textformfield_validator_functions.dart';

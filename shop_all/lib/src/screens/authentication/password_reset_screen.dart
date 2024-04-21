@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
-import 'package:shop_all/src/screens/authentication/send_auth_email_screen.dart';
+import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 
 class PasswordResetView extends StatelessWidget {
@@ -48,6 +48,7 @@ class PasswordResetView extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => Get.to(
                     () => SendAuthEmailView(
+                      userEmail: emptyString,
                       title: resetEmailSentString,
                       subtitle: resetEmailDetailsString,
                       buttonOnPressed: () => Get.offAll(() => const LoginView()),
