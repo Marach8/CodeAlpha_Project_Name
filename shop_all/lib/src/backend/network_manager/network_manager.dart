@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -11,18 +10,18 @@ class NetworkManager extends GetxController{
   static NetworkManager get instance => Get.find();
 
   final _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
-  final Rx<ConnectivityResult> _connectivityStatus = ConnectivityResult.none.obs;
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
+  final RxList<ConnectivityResult> _connectivityStatus = [ConnectivityResult.none].obs;
 
   @override 
   void onInit() {
     super.onInit();
-    _ConnectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnnectionStatus);
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
   }
 
-  void _updateConnnectionStatus(ConnectivityResult result){
+  void _updateConnectionStatus(List<ConnectivityResult> result){
     _connectivityStatus.value =  result;
-    if(_connectivityStatus.value == ConnectivityResult.none){
+    if(result.contains(ConnectivityResult.none)){
       showAppSnackbar(
         title: 'No Internet Connection!...',
         message: '',
@@ -35,12 +34,7 @@ class NetworkManager extends GetxController{
   Future<bool> isConnected() async{
     try{
       final result = await _connectivity.checkConnectivity();
-      if(result == ConnectivityResult.none){
-        return false;
-      }
-      else{
-        return true;
-      }
+      return !result.contains(ConnectivityResult.none);
     }
     on PlatformException catch(_){
       return false;

@@ -93,25 +93,46 @@ class CreateAccountView extends StatelessWidget {
                       ),
                       const Gap(10),
 
-                      TextFormField(
-                        controller: controller.passwordController,
-                        validator: (value) => validateForm(
-                          value: value,
-                          specialPasswordCheck: true
-                        ),
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.lock_outline_rounded),
-                          suffixIcon: Icon(Icons.visibility),
-                          labelText: passwordString
+                      Obx(
+                        () => TextFormField(
+                          controller: controller.passwordController,
+                          obscureText: controller.showPassword.value,
+                          validator: (value) => validateForm(
+                            value: value,
+                            specialPasswordCheck: true
+                          ),
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.lock_outline_rounded),
+                            suffixIcon: IconButton(
+                              onPressed: () => controller.showPassword.value = !controller.showPassword.value,
+                              icon: Visibility(
+                                visible: controller.showPassword.value,
+                                replacement: const Icon(Icons.visibility_off_rounded),
+                                child: const Icon(Icons.visibility_rounded)
+                              )
+                            ),
+                            labelText: passwordString
+                          ),
                         ),
                       ),
                       const Gap(10),
 
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.lock_outline_rounded),
-                          suffixIcon: Icon(Icons.visibility),
-                          labelText: confirmPasswordString
+                      Obx(
+                        () => TextFormField(
+                          controller: controller.confirmPasswordController,
+                          obscureText: controller.showConfirmPassword.value,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.lock_outline_rounded),
+                            suffixIcon: IconButton(
+                              onPressed: () => controller.showConfirmPassword.value = !controller.showConfirmPassword.value,
+                              icon: Visibility(
+                                visible: controller.showConfirmPassword.value,
+                                replacement: const Icon(Icons.visibility_off_rounded),
+                                child: const Icon(Icons.visibility_rounded)
+                              )
+                            ),
+                            labelText: confirmPasswordString
+                          ),
                         ),
                       ),
                       
@@ -144,24 +165,25 @@ class CreateAccountView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () => Get.to(
-                            () => SendAuthEmailView(
-                              title: verifyEmailString,
-                              subtitle: verifyEmailDetailsString,
-                              buttonText: continueString,
-                              buttonOnPressed: () => Get.to(
-                                () => CustomSuccessScreen(
-                                  title: successfulAccountCreationString,
-                                  subtitle: backToLoginScreenString,
-                                  buttonText: continueString,
-                                  onPressed: () => Get.offAll(
-                                    () => const LoginView()
-                                  )
-                                )
-                              ),
-                              resendEmailTap: (){},
-                            )
-                          ),
+                          onPressed: () => controller.signUpUser(),
+                          // onPressed: () => Get.to(
+                          //   () => SendAuthEmailView(
+                          //     title: verifyEmailString,
+                          //     subtitle: verifyEmailDetailsString,
+                          //     buttonText: continueString,
+                          //     buttonOnPressed: () => Get.to(
+                          //       () => CustomSuccessScreen(
+                          //         title: successfulAccountCreationString,
+                          //         subtitle: backToLoginScreenString,
+                          //         buttonText: continueString,
+                          //         onPressed: () => Get.offAll(
+                          //           () => const LoginView()
+                          //         )
+                          //       )
+                          //     ),
+                          //     resendEmailTap: (){},
+                          //   )
+                          // ),
                           child: const Text(signUpString),
                         ),
                       ),

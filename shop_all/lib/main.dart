@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shop_all/firebase_options.dart';
 import 'package:shop_all/src/backend/authentication/auth_repository.dart';
+import 'package:shop_all/src/backend/bindings/bindings.dart';
 import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/themes/theme.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialBinding: AppBindings(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
