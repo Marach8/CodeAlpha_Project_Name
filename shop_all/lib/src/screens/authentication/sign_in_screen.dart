@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:shop_all/src/backend/authentication/sign_in/sign_in_controller.dart';
 import 'package:shop_all/src/screens/authentication/sign_up_screen.dart';
 import 'package:shop_all/src/screens/authentication/password_reset_screen.dart';
-import 'package:shop_all/src/screens/home_screen/main_home_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
+import 'package:shop_all/src/utils/functions/textformfield_validator_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/login_footer_container.dart';
 
 class LoginView extends StatelessWidget {
@@ -13,6 +14,8 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignInController());
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -34,48 +37,75 @@ class LoginView extends StatelessWidget {
                 const Gap(20),
 
                 Form(
+                  key: controller.signInFormKey,
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: controller.emailController,
+                        validator: (value) => validateForm(
+                          value: value,
+                          specialEmailCheck: true
+                        ),
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.email_outlined),
                           labelText: emailString
                         ),
                       ),
+
                       const Gap(20),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.lock_outline_rounded),
-                          suffixIcon: Icon(Icons.visibility),
-                          labelText: passwordString
+
+                      Obx(
+                        () => TextFormField(
+                          controller: controller.passwordController,
+                          validator: (value) => validateForm(value: value),
+                          obscureText: controller.showPassword.value,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.lock_outline_rounded),
+                            suffixIcon: IconButton(
+                              onPressed: () => controller.showPassword.value = !controller.showPassword.value,
+                              icon: Visibility(
+                                visible: controller.showPassword.value,
+                                replacement: const Icon(Icons.visibility_off_rounded),
+                                child: const Icon(Icons.visibility_rounded)
+                              ),
+                            ),
+                            labelText: passwordString
+                          ),
                         ),
                       ),
                       const Gap(10),
+                      
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Checkbox(value: true, onChanged: (value){}),
-                              Text(
-                                rememberMeString,
-                                style: Theme.of(context).textTheme.bodySmall
-                              )
-                            ],
+                          Obx(
+                            () => Checkbox(
+                              value: controller.rememberMe.value,
+                              onChanged: (value) => controller.rememberMe.value = value ?? false,
+                            ),
                           ),
+                          GestureDetector(
+                            onTap: () => controller.rememberMe.value = !controller.rememberMe.value,
+                            child: Text(
+                              rememberMeString,
+                              style: Theme.of(context).textTheme.bodyLarge
+                            ),
+                          ),
+                          const Spacer(),
                           TextButton(
                             onPressed: () => Get.to(() => const PasswordResetView()),
-                            child: const Text(forgotPasswordString),
-                          )
+                            child: Text(
+                              forgotPasswordString,
+                              style: Theme.of(context).textTheme.bodyLarge
+                            ),
+                          ),
                         ],
                       ),
+                      const Gap(10),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: (){
-                            Get.offAll(() => const MainHomeView());
-                          },
+                          onPressed: () async => await controller.signInUser(),
                           child: const Text(loginString),
                         ),
                       ),

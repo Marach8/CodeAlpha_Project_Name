@@ -44,6 +44,7 @@ const continueString = 'Continue';
 const resendEmailString = "Didn't get an Email?";
 
 const successfulAccountCreationString = 'Account creation successful!';
+const successfulLoginString = 'Login successful!';
 const congratulationString = 'Congratulations!🎉';
 const backToLoginScreenString = '''
 Your account has been successfully created and verified. Click on the button below to go back to login page...

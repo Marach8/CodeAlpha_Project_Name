@@ -13,7 +13,7 @@ import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 class AuthRepository extends GetxController{
   static AuthRepository get instance => Get.find();
 
-  final deviceStorage = GetStorage();
+  final _deviceStorage = GetStorage();
   final _cloudAuth = FirebaseAuth.instance;
 
   @override 
@@ -34,10 +34,28 @@ class AuthRepository extends GetxController{
     }
 
     else{
-      await deviceStorage.writeIfNull(isFirstTimeKey, true);
-      deviceStorage.read(isFirstTimeKey) 
+      await _deviceStorage.writeIfNull(isFirstTimeKey, true);
+      _deviceStorage.read(isFirstTimeKey) 
         ? Get.offAll(() => const OnboardingView()) 
         : Get.offAll(() => const LoginView());
+    }
+  }
+
+  Future<UserCredential> signInUser({
+    required String email,
+    required String password
+  }) async{
+    try{
+      return await _cloudAuth.signInWithEmailAndPassword(email: email, password: password);
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
     }
   }
 

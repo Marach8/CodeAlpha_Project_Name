@@ -1,5 +1,6 @@
 const isFirstTimeKey = 'isFirstTime';
-const signingUpString = 'Registration information processing...';
+const signingUpString = 'Registration Processing...';
+const signingInString = 'Login Processing...';
 const errorOccuredString = 'An Error Occured!!!';
 const acceptPrivacyPolicyString = 'Privacy Policy';
 const acceptPrivacyPolicySubtitleString = """

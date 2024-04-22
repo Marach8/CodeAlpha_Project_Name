@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/backend/authentication/auth_repository.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/order_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_addresses_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
@@ -167,7 +168,7 @@ class ProfileDestinationView extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () async => await AuthRepository.instance.signOutUser(),
                 child: Text(
                   'Logout',
                   style: Theme.of(context).textTheme.bodyMedium,
