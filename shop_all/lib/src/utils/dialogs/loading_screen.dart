@@ -30,7 +30,6 @@ void showLoadingScreen(String text, String lottiePath){
         )
       );
     }
-
   );
 }
 

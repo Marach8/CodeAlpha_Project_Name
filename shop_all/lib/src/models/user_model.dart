@@ -7,9 +7,9 @@ class UserModel extends MapView<String, String>{
   lastName,
   userName,
   email,
-  password,
   phoneNumber,
   displayPicture;
+  final String? password;
 
   UserModel({
     required this.userId,
@@ -17,7 +17,7 @@ class UserModel extends MapView<String, String>{
     required this.firstName,
     required this.lastName,
     required this.email, 
-    required this.password,
+    this.password,
     required this.phoneNumber,
     required this.displayPicture,
   }): super(
@@ -27,7 +27,7 @@ class UserModel extends MapView<String, String>{
       firstNameString.toLowerCase(): firstName,
       lastNameString.toLowerCase(): lastName,
       emailString.toLowerCase(): email,
-      passwordString.toLowerCase(): password,
+      passwordString.toLowerCase(): password ?? emptyString,
       phoneString.toLowerCase(): phoneNumber,
       displayPictureString: displayPicture
     }

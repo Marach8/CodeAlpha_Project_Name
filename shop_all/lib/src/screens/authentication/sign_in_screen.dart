@@ -139,7 +139,7 @@ class LoginView extends StatelessWidget {
                   children: [
                     FooterContainer(
                       logoString: googleLogoString,
-                      onPressed: (){},
+                      onPressed: () => controller.signInUserWithGoogle(),
                     ),
                     const Gap(20),
                     FooterContainer(

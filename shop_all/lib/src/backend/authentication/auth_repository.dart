@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/screens/home_screen/main_home_screen.dart';
@@ -96,6 +97,28 @@ class AuthRepository extends GetxController{
     try{
       await _cloudAuth.signOut();
       Get.offAll(() => const LoginView());
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+
+  Future<UserCredential> googleSignIn() async{
+    try{
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication? googleOAuth = await userAccount?.authentication;
+      final userCredential = GoogleAuthProvider.credential(
+        accessToken: googleOAuth?.accessToken,
+        idToken: googleOAuth?.idToken
+      );
+      return await _cloudAuth.signInWithCredential(userCredential);
     }
     on FirebaseAuthException catch(e){
       throw e.code;

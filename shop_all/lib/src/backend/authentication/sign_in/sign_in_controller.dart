@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/backend/authentication/auth_repository.dart';
 import 'package:shop_all/src/backend/network_manager/network_manager.dart';
+import 'package:shop_all/src/backend/user/user_controller.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
@@ -70,6 +71,38 @@ class SignInController extends GetxController{
       AuthRepository.instance.appRedirect();
     }
     catch(e){
+      hideLoadingScreen();
+      showAppSnackbar(
+        title: errorOccuredString,
+        message: e.toString(),
+        icon: Icons.cancel,
+        backgroundColor: redColor, 
+      );
+    }
+  }
+
+
+  Future<void> signInUserWithGoogle() async{
+    try{
+      showLoadingScreen(signingInString, bikeRiderLottie);
+      final isConnected = await NetworkManager.instance.isConnected();
+      if(!isConnected) {
+        hideLoadingScreen();
+        return;
+      }
+
+      if(!signInFormKey.currentState!.validate()){
+        hideLoadingScreen();
+        return;
+      }
+      final userCredential = await AuthRepository.instance.googleSignIn();
+
+      final userController = Get.put(UserController());
+      await userController.saveUserDataDuringGoogleSignIn(userCredential);
+      hideLoadingScreen();
+      AuthRepository.instance.appRedirect();
+    }
+    catch (e){
       hideLoadingScreen();
       showAppSnackbar(
         title: errorOccuredString,
