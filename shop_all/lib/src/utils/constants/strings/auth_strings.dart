@@ -12,3 +12,4 @@ const usersString = 'Users';
 const failedOperationString = 'Operation Failed!';
 const operationSuccessfulString = 'Operation Successful!';
 const verificationEmailSentString = 'A verification email has been sent to you...';
+const exitString = 'Exit...';

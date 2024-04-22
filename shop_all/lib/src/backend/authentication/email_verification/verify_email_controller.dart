@@ -19,7 +19,7 @@ class SendAuthEmailController extends GetxController{
     _timerForRedirection();
   }
 
-  sendAuthVerificationEmail() async{
+  void sendAuthVerificationEmail() async{
     try{
       await AuthRepository.instance.sendAuthVerificationEmail();
       showAppSnackbar(
@@ -39,14 +39,14 @@ class SendAuthEmailController extends GetxController{
     }
   }
 
-  _timerForRedirection() async{
+  void _timerForRedirection() async{
     Timer.periodic(
       const Duration(seconds: 2), (timer) async{
         final user = FirebaseAuth.instance.currentUser;
         await user?.reload();
         if(user?.emailVerified ?? false){
           timer.cancel();
-          Get.off(
+          Get.to(
             () => CustomSuccessScreen(
               title: successfulAccountCreationString,
               subtitle: backToLoginScreenString,
@@ -59,7 +59,7 @@ class SendAuthEmailController extends GetxController{
     );
   }
 
-  checkEmailVerificationStatus() async{
+  void checkEmailVerificationStatus() async{
     final user = FirebaseAuth.instance.currentUser;
     if(user != null && user.emailVerified){
       Get.off(

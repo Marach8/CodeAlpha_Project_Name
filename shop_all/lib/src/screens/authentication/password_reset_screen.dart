@@ -46,16 +46,17 @@ class PasswordResetView extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(
-                    () => SendAuthEmailView(
-                      userEmail: emptyString,
-                      title: resetEmailSentString,
-                      subtitle: resetEmailDetailsString,
-                      buttonOnPressed: () => Get.offAll(() => const LoginView()),
-                      resendEmailTap: (){},
-                      buttonText: continueString
-                    ),
-                  ),
+                  onPressed: (){},
+                  // onPressed: () => Get.to(
+                  //   () => SendAuthEmailView(
+                  //     userEmail: emptyString,
+                  //     title: resetEmailSentString,
+                  //     subtitle: resetEmailDetailsString,
+                  //     buttonOnPressed: () => Get.offAll(() => const LoginView()),
+                  //     resendEmailTap: (){},
+                  //     buttonText: continueString
+                  //   ),
+                  // ),
                   child: const Text(submitString),
                 ),
               ),

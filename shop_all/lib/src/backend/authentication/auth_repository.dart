@@ -4,6 +4,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
+import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
+import 'package:shop_all/src/screens/home_screen/main_home_screen.dart';
 import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 
@@ -21,10 +23,22 @@ class AuthRepository extends GetxController{
   }
 
   void appRedirect() async{
-    await deviceStorage.writeIfNull(isFirstTimeKey, true);
-    deviceStorage.read(isFirstTimeKey) 
-      ? Get.offAll(() => const OnboardingView()) 
-      : Get.offAll(() => const LoginView());
+    final User? user = _cloudAuth.currentUser;
+    if(user != null){
+      if(user.emailVerified) {
+        Get.offAll(() => const MainHomeView());
+      }
+      else {
+        Get.offAll(() => VerifyEmailView(userEmail: user.email!));
+      }     
+    }
+
+    else{
+      await deviceStorage.writeIfNull(isFirstTimeKey, true);
+      deviceStorage.read(isFirstTimeKey) 
+        ? Get.offAll(() => const OnboardingView()) 
+        : Get.offAll(() => const LoginView());
+    }
   }
 
   Future<UserCredential> signUpNewUser({
@@ -48,6 +62,22 @@ class AuthRepository extends GetxController{
   Future<void> sendAuthVerificationEmail()async{
     try{
       await _cloudAuth.currentUser?.sendEmailVerification();
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+  Future<void> signOutUser() async{
+    try{
+      await _cloudAuth.signOut();
+      Get.offAll(() => const LoginView());
     }
     on FirebaseAuthException catch(e){
       throw e.code;

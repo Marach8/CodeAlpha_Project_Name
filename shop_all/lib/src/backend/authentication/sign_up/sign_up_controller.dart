@@ -35,11 +35,18 @@ class SignUpController extends GetxController{
     try{
       showLoadingScreen(signingUpString, bikeRiderLottie);
       final isConnected = await NetworkManager.instance.isConnected();
-      if(!isConnected) return;
+      if(!isConnected) {
+        hideLoadingScreen();
+        return;
+      }
 
-      if(!signUpFormKey.currentState!.validate()) return;
+      if(!signUpFormKey.currentState!.validate()){
+        hideLoadingScreen();
+        return;
+      }
 
       if(!(passwordController.text.trim() == confirmPasswordController.text.trim())){
+        hideLoadingScreen();
         showAppSnackbar(
           title: unmatchedPasswordsString,
           message: unmatchedPasswordsSubtitleString,
@@ -50,6 +57,7 @@ class SignUpController extends GetxController{
       }
 
       if(!privacyPolicyCheck.value){
+        hideLoadingScreen();
         showAppSnackbar(
           title: acceptPrivacyPolicyString,
           message: acceptPrivacyPolicySubtitleString,
@@ -81,32 +89,13 @@ class SignUpController extends GetxController{
       hideLoadingScreen();
 
       showAppSnackbar(
-        title: 'Congratulations',
+        title: congratulationString,
         message: successfulAccountCreationString,
         icon: Iconsax.check,
         backgroundColor: blueColor,
       );
 
-      Get.to(
-        () => SendAuthEmailView(
-          userEmail: emailController.text.trim(),
-          title: verifyEmailString,
-          subtitle: verifyEmailDetailsString,
-          buttonText: continueString,
-          buttonOnPressed: (){},
-          resendEmailTap: (){},
-          // buttonOnPressed: () => Get.to(
-          //   () => CustomSuccessScreen(
-          //     title: successfulAccountCreationString,
-          //     subtitle: backToLoginScreenString,
-          //     buttonText: continueString,
-          //     onPressed: () => Get.offAll(
-          //       () => const LoginView()
-          //     )
-          //   )
-          // ),
-        )
-      );
+      Get.to(() => VerifyEmailView(userEmail: emailController.text.trim()));
 
     }
     catch(e){

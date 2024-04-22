@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:shop_all/src/backend/authentication/auth_repository.dart';
 import 'package:shop_all/src/backend/authentication/email_verification/verify_email_controller.dart';
-import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
+import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 
-class SendAuthEmailView extends StatelessWidget {
-  final String title, subtitle,
-  buttonText, userEmail;
-  final void Function() buttonOnPressed,
-  resendEmailTap;
 
-  const SendAuthEmailView({
+class VerifyEmailView extends StatelessWidget {
+  final String userEmail;
+
+  const VerifyEmailView({
     super.key,
-    required this.title,
-    required this.userEmail,
-    required this.subtitle,
-    required this.buttonOnPressed,
-    required this.resendEmailTap,
-    required this.buttonText,
+    required this.userEmail
   });
 
   @override
@@ -31,9 +25,13 @@ class SendAuthEmailView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            onPressed: () => Get.offAll(() => const LoginView()),
-            icon: const Icon(Icons.cancel)
+          TextButton(
+            onPressed: () async => await AuthRepository.instance.signOutUser(),
+            child: Text(
+              exitString,
+              style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
+            ),
           )
         ]
       ),
@@ -47,13 +45,19 @@ class SendAuthEmailView extends StatelessWidget {
               children: [
                 const CustomLottieAnimationView(lottieString: lottie4),
                 Text(
-                  title,
+                  userEmail,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const Gap(20),
+                Text(
+                  verifyEmailString,
                   style: Theme.of(context).textTheme.headlineMedium,
                   textAlign: TextAlign.center,
                 ),
                 const Gap(10),
                 Text(
-                  subtitle,
+                  verifyEmailDetailsString,
                   style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -62,7 +66,7 @@ class SendAuthEmailView extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () => controller.checkEmailVerificationStatus(),
-                    child: Text(buttonText),
+                    child: const Text(continueString),
                   ),
                 ),
                 const Gap(20),
