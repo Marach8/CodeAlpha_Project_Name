@@ -96,6 +96,7 @@ class AuthRepository extends GetxController{
   Future<void> signOutUser() async{
     try{
       await _cloudAuth.signOut();
+      await GoogleSignIn().signOut();
       Get.offAll(() => const LoginView());
     }
     on FirebaseAuthException catch(e){
@@ -119,6 +120,22 @@ class AuthRepository extends GetxController{
         idToken: googleOAuth?.idToken
       );
       return await _cloudAuth.signInWithCredential(userCredential);
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+
+  Future<void> sendPasswordResetEmail({required String email}) async{
+    try{
+      await _cloudAuth.sendPasswordResetEmail(email: email);
     }
     on FirebaseAuthException catch(e){
       throw e.code;

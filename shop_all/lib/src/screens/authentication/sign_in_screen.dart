@@ -3,7 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:shop_all/src/backend/authentication/sign_in/sign_in_controller.dart';
 import 'package:shop_all/src/screens/authentication/sign_up_screen.dart';
-import 'package:shop_all/src/screens/authentication/password_reset_screen.dart';
+import 'package:shop_all/src/screens/authentication/forgot_password_screen.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/textformfield_validator_functions.dart';
@@ -93,7 +93,7 @@ class LoginView extends StatelessWidget {
                           ),
                           const Spacer(),
                           TextButton(
-                            onPressed: () => Get.to(() => const PasswordResetView()),
+                            onPressed: () => Get.to(() => const ForgotPasswordScreen()),
                             child: Text(
                               forgotPasswordString,
                               style: Theme.of(context).textTheme.bodyLarge

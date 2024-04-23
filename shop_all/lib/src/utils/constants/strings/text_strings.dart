@@ -8,6 +8,7 @@ const welcomeSubtitle3 = 'From Our Doorstep to Yours - Quick, Safe and Contactle
 const skipString = 'Skip';
 
 const emptyString = '';
+const spaceString = ' ';
 
 const welcomeBackString = 'Welcome back!';
 const introString = "Explore a World of Infinite Options and Boundless Convenience";

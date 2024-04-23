@@ -12,6 +12,7 @@ import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/dialogs/loading_screen.dart';
 import 'package:shop_all/src/utils/dialogs/snackbar.dart';
 
+
 class SignInController extends GetxController{
   static SignInController get instance => Get.find();
 

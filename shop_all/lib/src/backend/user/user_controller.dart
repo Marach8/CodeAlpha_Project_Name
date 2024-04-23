@@ -15,8 +15,8 @@ class UserController extends GetxController{
         final userModel = UserModel(
           userId: userCredential.user!.uid,
           userName: displayName,
-          firstName: displayName.split(emptyString).first,
-          lastName: displayName.split(emptyString).last,
+          firstName: displayName.split(spaceString).first,
+          lastName: displayName.split(spaceString).last,
           email: userCredential.user!.email ?? emptyString,
           phoneNumber: userCredential.user!.phoneNumber ?? emptyString,
           displayPicture: userCredential.user!.photoURL ?? emptyString
