@@ -3,6 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/backend/authentication/auth_repository.dart';
+import 'package:shop_all/src/backend/user/user_controller.dart';
+import 'package:shop_all/src/models/user_model.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/order_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_addresses_view.dart';
 import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
@@ -21,6 +23,7 @@ class ProfileDestinationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = UserController.instance;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -34,26 +37,32 @@ class ProfileDestinationView extends StatelessWidget {
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                   ),
-                  ListTile(
-                    leading: const CustomCircularContainer(
-                      radius: 50,
-                      child: CustomLottieAnimationView(lottieString: lottie7,)
-                    ),
-                    title: Text(
-                      'Nnanna Marach',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.headlineSmall
-                    ),
-                    subtitle: Text(
-                      'emmanuel.fmrs.march@gmail.com',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.labelSmall,
-                    ),
-                    trailing: IconButton(
-                      onPressed: () => Get.to(() => const UserProfileView()),
-                      icon: const Icon(Iconsax.edit)
+                  Obx(
+                    () => Visibility(
+                      visible: userController.userModel.value != UserModel.empty(),
+                      child: ListTile(
+                        leading: const CustomCircularContainer(
+                          radius: 60,
+                          child: CustomLottieAnimationView(lottieString: lottie7,)
+                        ),
+                        title: Text(
+                          userController.userModel.value.firstName + 
+                            spaceString + userController.userModel.value.lastName,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.headlineSmall
+                        ),
+                        subtitle: Text(
+                          userController.userModel.value.email,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                        trailing: IconButton(
+                          onPressed: () => Get.to(() => const UserProfileView()),
+                          icon: const Icon(Iconsax.edit)
+                        ),
+                      ),
                     ),
                   ),
                   const Gap(30)

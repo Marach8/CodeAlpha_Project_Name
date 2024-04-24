@@ -63,6 +63,7 @@ const favouritesString = 'Favourites';
 const profileString = 'Profile';
 const storeString = 'Store';
 const shopHavenWelcomeString = '🛒ShopHaven🛒';
+const loadingString = 'Loading...';
 const shopHavenIntroString = 'Shop in Heaven while on Earth...';
 const searchString = 'Search Items in Store';
 const popularCategoriesString = 'Popular Categories';

@@ -18,29 +18,31 @@ class CustomLottieAnimationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: [
-          Lottie.asset(
-            lottieString,
-            fit: BoxFit.cover,
-          ),
-          displayText != null ? Text(
-            displayText!,
-            style: Theme.of(context).textTheme.bodyLarge,
-            textAlign: TextAlign.center,
-          ) : const SizedBox.shrink(),
-          const Gap(20),
-          actionText != null ? SizedBox(
-            width: 250,
-            child: OutlinedButton(
-              onPressed: actionOnPressed,
-              child: Text(
-                actionText!,
-                style: Theme.of(context).textTheme.bodyMedium
-              ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Lottie.asset(
+              lottieString,
+              fit: BoxFit.contain,
             ),
-          ) : const SizedBox.shrink()
-        ],
+            displayText != null ? Text(
+              displayText!,
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ) : const SizedBox.shrink(),
+            const Gap(20),
+            actionText != null ? SizedBox(
+              width: 250,
+              child: OutlinedButton(
+                onPressed: actionOnPressed,
+                child: Text(
+                  actionText!,
+                  style: Theme.of(context).textTheme.bodyMedium
+                ),
+              ),
+            ) : const SizedBox.shrink()
+          ],
+        ),
       ),
     );
   }

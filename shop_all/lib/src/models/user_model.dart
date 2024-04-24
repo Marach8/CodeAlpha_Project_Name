@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 
 class UserModel extends MapView<String, String>{
@@ -32,4 +33,26 @@ class UserModel extends MapView<String, String>{
       displayPictureString: displayPicture
     }
   );
+
+  factory UserModel.fromJson(Map<String, dynamic> json)
+    => UserModel(
+      userId: json[userIdString],
+      userName: json[userNameString.toLowerCase()],
+      firstName: json[firstNameString.toLowerCase()],
+      lastName: json[lastNameString.toLowerCase()],
+      email: json[emailString.toLowerCase()],
+      phoneNumber: json[phoneString.toLowerCase()],
+      displayPicture: json[displayPictureString]
+    );
+
+
+  factory UserModel.empty() => UserModel(
+      userId: emptyString,
+      userName: emptyString,
+      firstName: emptyString,
+      lastName: emptyString,
+      email: emptyString,
+      phoneNumber: emptyString,
+      displayPicture: emptyString
+    );
 }
