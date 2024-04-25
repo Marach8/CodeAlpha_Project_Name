@@ -25,6 +25,7 @@ class UpperPartOfHomeView extends StatelessWidget {
     return Column(
       children: [
         CustomAppBar(
+          hideLeadingBackArrow: true,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,7 +35,7 @@ class UpperPartOfHomeView extends StatelessWidget {
                   replacement: const CustomShimmerWidget(),
                   child: Text(
                     userController.userModel.value.userName,
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
               ),

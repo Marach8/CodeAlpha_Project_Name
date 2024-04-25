@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/products_grid_view.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/main_home_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/products_grid_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/main_home_view.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';

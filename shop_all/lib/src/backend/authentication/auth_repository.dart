@@ -6,7 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
-import 'package:shop_all/src/screens/home_screen/main_home_screen.dart';
+import 'package:shop_all/src/screens/main_application/main_home_screen.dart';
 import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 import 'dart:developer' as marach show log;

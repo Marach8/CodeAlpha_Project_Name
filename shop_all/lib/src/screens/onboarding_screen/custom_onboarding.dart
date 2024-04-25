@@ -17,23 +17,25 @@ class CustomOnboardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomLottieAnimationView(lottieString: lottieString),
-          const Gap(50),
-          Text(
-            welcomeTitle,
-            style: Theme.of(context).textTheme.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
-          const Gap(10),
-          Text(
-            welcomeSubtitle,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-          )
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomLottieAnimationView(lottieString: lottieString),
+            const Gap(50),
+            Text(
+              welcomeTitle,
+              style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.center,
+            ),
+            const Gap(10),
+            Text(
+              welcomeSubtitle,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }

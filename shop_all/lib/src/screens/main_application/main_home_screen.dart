@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/backend/user/user_controller.dart';
-import 'package:shop_all/src/screens/home_screen/controllers/navigation_bar_controller.dart';
+import 'package:shop_all/src/screens/main_application/controllers/navigation_bar_controller.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';

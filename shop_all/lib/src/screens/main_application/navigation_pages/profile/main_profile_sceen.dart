@@ -5,9 +5,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/backend/authentication/auth_repository.dart';
 import 'package:shop_all/src/backend/user/user_controller.dart';
 import 'package:shop_all/src/models/user_model.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/order_view.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_addresses_view.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/user_profile_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/order_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/profile/subviews/user_addresses_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/profile/subviews/user_profile_view.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
@@ -48,13 +48,13 @@ class ProfileDestinationView extends StatelessWidget {
                         title: Text(
                           userController.userModel.value.firstName + 
                             spaceString + userController.userModel.value.lastName,
-                          maxLines: 1,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.headlineSmall
                         ),
                         subtitle: Text(
                           userController.userModel.value.email,
-                          maxLines: 1,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.labelSmall,
                         ),

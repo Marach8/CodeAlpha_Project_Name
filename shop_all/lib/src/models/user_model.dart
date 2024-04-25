@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 
 class UserModel extends MapView<String, String>{
@@ -23,7 +22,7 @@ class UserModel extends MapView<String, String>{
     required this.displayPicture,
   }): super(
     {
-      userIdString: userId,
+      userIdString.toLowerCase(): userId,
       userNameString.toLowerCase(): userName,
       firstNameString.toLowerCase(): firstName,
       lastNameString.toLowerCase(): lastName,
@@ -36,7 +35,7 @@ class UserModel extends MapView<String, String>{
 
   factory UserModel.fromJson(Map<String, dynamic> json)
     => UserModel(
-      userId: json[userIdString],
+      userId: json[userIdString.toLowerCase()],
       userName: json[userNameString.toLowerCase()],
       firstName: json[firstNameString.toLowerCase()],
       lastName: json[lastNameString.toLowerCase()],

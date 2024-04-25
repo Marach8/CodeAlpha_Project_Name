@@ -60,4 +60,16 @@ class UserController extends GetxController{
       );
     }
   }
+
+
+  Future<dynamic> eraseUserData(){
+    Get.defaultDialog(
+      contentPadding: const EdgeInsets.all(15),
+      title: deleteAccountString,
+      middleText: deleteAccountDetailsString,
+      confirm: ElevatedButton(
+        onPressed: () async => ,
+      )
+    );
+  }
 }

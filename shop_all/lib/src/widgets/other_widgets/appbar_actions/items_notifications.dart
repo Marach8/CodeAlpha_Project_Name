@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/cart_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/cart_view.dart';
 
 class ShopItemsNotification extends StatelessWidget {
   const ShopItemsNotification({super.key});

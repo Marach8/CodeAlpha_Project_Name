@@ -16,7 +16,7 @@ const emailString = 'Email';
 const passwordString = 'Password';
 const rememberMeString = 'Remember Me';
 const forgotPasswordString = 'Forgot Password';
-const userIdString = 'userId';
+const userIdString = 'UserID';
 const displayPictureString = 'displayPicture';
 const loginString = 'Login';
 const signUpString = 'Create account';
@@ -40,6 +40,9 @@ const termsOfServiceString = 'Terms Of Service';
 const privacyPolicyString = 'Privacy Policy ';
 
 const verifyEmailString = 'Verify you email address...';
+const deleteAccountDetailsString = '''
+Are you sure you want permanently delete your account? This action cannot be undone!!!
+''';
 const verifyEmailDetailsString = 'A verification link has been sent to your registered email.';
 const continueString = 'Continue';
 const resendEmailString = "Didn't get an Email?";
@@ -79,6 +82,7 @@ const favoriteProductsString = 'Favorite Products';
 const accountString = 'My Account';
 const changePhotoString = 'Change Profile Picture';
 const profileInformationString = 'Profile Information';
+const personalInformationString = 'Personal Information';
 const nameString = 'Name';
 const deleteAccountString = 'Delete Account';
 

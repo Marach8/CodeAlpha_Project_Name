@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/carousel_slider.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/header_division.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/products_grid_view.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/general_products_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/carousel_slider.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/header_division.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/products_grid_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/general_products_view.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';

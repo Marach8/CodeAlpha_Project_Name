@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/home_screen/controllers/carousel_indicator_controller.dart';
+import 'package:shop_all/src/screens/main_application/controllers/carousel_indicator_controller.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
 import 'package:shop_all/src/utils/functions/helper_functions.dart';

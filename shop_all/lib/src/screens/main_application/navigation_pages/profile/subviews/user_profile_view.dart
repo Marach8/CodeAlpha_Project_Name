@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/backend/user/user_controller.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
+import 'package:shop_all/src/widgets/custom_widgets/dynamic_profile_menu_row.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/profile_menu_row.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
@@ -15,6 +18,8 @@ class UserProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = Get.put(UserController());
+    final userModel = userController.userModel.value;
     return Scaffold(
       appBar: const CustomAppBar(
         title: Text(profileString),
@@ -48,41 +53,53 @@ class UserProfileView extends StatelessWidget {
               const Gap(10),
               const CustomSectionHeading(headingText: profileInformationString),
               const Gap(20),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                onTap: (){},
+              
+              CustomDynamicProfileMenuRow(
+                child: CustomProfileMenuRow(
+                  field: nameString,
+                  fieldValue: userModel.firstName + spaceString + userModel.lastName,
+                  onTap: (){},
+                ),
               ),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                onTap: (){},
+
+              CustomDynamicProfileMenuRow(
+                child: CustomProfileMenuRow(
+                  field: userNameString,
+                  fieldValue: userModel.userName,
+                  onTap: (){},
+                ),
               ),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                onTap: (){},
-              ),
+              
               const Gap(10),
               const Divider(),
+
               const Gap(10),
-              const CustomSectionHeading(headingText: profileInformationString),
+
+              const CustomSectionHeading(headingText: personalInformationString),
+
               const Gap(10),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                icon: Iconsax.copy,
-                onTap: (){},
+
+              CustomDynamicProfileMenuRow(
+                child: CustomProfileMenuRow(
+                  icon: Iconsax.copy,
+                  field: userIdString,
+                  fieldValue: userModel.userId,
+                  onTap: (){},
+                ),
               ),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                onTap: (){},
+              CustomDynamicProfileMenuRow(
+                child: CustomProfileMenuRow(
+                  field: emailString,
+                  fieldValue: userModel.email,
+                  onTap: (){},
+                ),
               ),
-              CustomProfileMenuRow(
-                field: nameString,
-                fieldValue: 'MarachNnanna',
-                onTap: (){},
+              CustomDynamicProfileMenuRow(
+                child: CustomProfileMenuRow(
+                  field: phoneString,
+                  fieldValue: userModel.phoneNumber,
+                  onTap: (){},
+                ),
               ),
               CustomProfileMenuRow(
                 field: nameString,

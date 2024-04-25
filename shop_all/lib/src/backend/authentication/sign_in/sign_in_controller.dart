@@ -92,10 +92,6 @@ class SignInController extends GetxController{
         return;
       }
 
-      if(!signInFormKey.currentState!.validate()){
-        hideLoadingScreen();
-        return;
-      }
       final userCredential = await AuthRepository.instance.googleSignIn();
 
       final userController = Get.put(UserController());

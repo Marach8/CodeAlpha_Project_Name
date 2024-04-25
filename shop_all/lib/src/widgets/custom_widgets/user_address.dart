@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/profile/subviews/edit_address_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/profile/subviews/edit_address_view.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/widgets/custom_widgets/container_with_border.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/home/home_subviews/checkout_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/checkout_view.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/widgets/custom_widgets/app_bar_title_text.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';

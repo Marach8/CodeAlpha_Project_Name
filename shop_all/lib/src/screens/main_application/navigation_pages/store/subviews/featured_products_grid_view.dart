@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/home_screen/navigation_pages/store/subviews/product_detail_view.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/product_detail_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/featured_brand_widget.dart';
 
 class FeaturedBrandsSubView extends StatelessWidget {
