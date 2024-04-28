@@ -9,7 +9,6 @@ import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/screens/main_application/main_home_screen.dart';
 import 'package:shop_all/src/screens/onboarding_screen/onboarding_page_view.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
-import 'dart:developer' as marach show log;
 
 
 class AuthRepository extends GetxController{
@@ -17,6 +16,7 @@ class AuthRepository extends GetxController{
 
   final _deviceStorage = GetStorage();
   final _cloudAuth = FirebaseAuth.instance;
+  User? get authUser  => _cloudAuth.currentUser;
 
   @override 
   void onReady(){
@@ -121,6 +121,22 @@ class AuthRepository extends GetxController{
         idToken: googleOAuth?.idToken
       );
       return await _cloudAuth.signInWithCredential(userCredential);
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+
+  Future<void> deleteUserAccount() async{
+    try{
+      await _cloudAuth.currentUser!.delete();
     }
     on FirebaseAuthException catch(e){
       throw e.code;

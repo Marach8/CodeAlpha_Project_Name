@@ -43,6 +43,8 @@ const verifyEmailString = 'Verify you email address...';
 const deleteAccountDetailsString = '''
 Are you sure you want permanently delete your account? This action cannot be undone!!!
 ''';
+const deleteString = 'Delete';
+const cancelString = 'Cancel';
 const verifyEmailDetailsString = 'A verification link has been sent to your registered email.';
 const continueString = 'Continue';
 const resendEmailString = "Didn't get an Email?";
@@ -115,3 +117,7 @@ const atSignString = '@';
 const missingAtSignString = 'Field must contain "@" sign';
 const weakPasswordString = 'Field must contain at least a digit and a special character';
 const invalidPhoneNumberString = 'Please enter a valid phone number!';
+
+const changeNameString = 'Change Name';
+const changeNameInstructionString = 'Ensure to use a real name. The name entered will be used on several pages!';
+const changeOfNameSuccessfulString = 'You have successfully changed your name';

@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 
 class UserModel extends MapView<String, String>{
-  final String userId,
+  String userId,
   firstName,
   lastName,
   userName,

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shop_all/src/backend/user/user_controller.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/profile/subviews/change_name_view.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
@@ -58,7 +59,7 @@ class UserProfileView extends StatelessWidget {
                 child: CustomProfileMenuRow(
                   field: nameString,
                   fieldValue: userModel.firstName + spaceString + userModel.lastName,
-                  onTap: (){},
+                  onTap: () => Get.to(() => const ChangeNameOfUserView()),
                 ),
               ),
 

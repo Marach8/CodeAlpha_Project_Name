@@ -46,9 +46,9 @@ class UserRepository extends GetxController{
     }
   }
 
-  Future<void> updateUserData(UserModel userModel) async{
+  Future<void> updateUserData(Map<String, dynamic> userUpdate) async{
     try{
-      await _cloudFirestore.collection(usersString).doc(_user?.uid).update(userModel);    
+      await _cloudFirestore.collection(usersString).doc(_user?.uid).update(userUpdate);    
     }
     on FirebaseException catch(e){
       throw e.code;
