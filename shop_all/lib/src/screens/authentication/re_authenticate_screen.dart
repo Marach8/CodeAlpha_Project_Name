@@ -16,45 +16,45 @@ class ReAuthenticateView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
-    
+
     return Scaffold(
       appBar: const CustomAppBar(
         title: CustomAppbarTitleText(title: reAuthenticateString),
       ),
 
       body: Form(
-        key: controller.updateUserFullNameFormKey,
+        key: controller.reAuthenticateUserFormKey,
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: [
             Text(
-              changeNameInstructionString,
+              reAuthenticationDetailsString,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Gap(30),
             TextFormField(
               validator: (value) => validateForm(value: value),
-              controller: controller.firstNameController,
+              controller: controller.reAuthEmailController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.user),
-                labelText: firstNameString
+                labelText: emailString
               ),
             ),
             const Gap(20),
             TextFormField(
               validator: (value) => validateForm(value: value),
-              controller: controller.lastNameController,
+              controller: controller.reAuthPasswordController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.user),
-                labelText: lastNameString
+                labelText: passwordString
               ),
             ),
             const Gap(30),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () async => await controller.updateUserFullName(),
-                child: const Text(saveString),
+                onPressed: () async => await controller.reAuthenticateUser(),
+                child: const Text(verifyString),
               ),
             )
           ],

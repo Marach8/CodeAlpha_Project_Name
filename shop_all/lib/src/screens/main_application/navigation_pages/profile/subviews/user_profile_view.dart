@@ -113,7 +113,7 @@ class UserProfileView extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: () => userController.showDeleteAccountWarning(),
                   child: const Text(
                     deleteAccountString,
                     style: TextStyle(color: redColor),

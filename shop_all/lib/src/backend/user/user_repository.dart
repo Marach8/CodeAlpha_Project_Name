@@ -61,10 +61,9 @@ class UserRepository extends GetxController{
     }
   }
 
-  Future<dynamic> deleteUserData(UserModel userModel) async{
+  Future<dynamic> deleteUserData(String userId) async{
     try{
-      await _cloudFirestore.collection(usersString).doc(_user?.uid).delete(); 
-      await FirebaseAuth.instance.signOut();   
+      await _cloudFirestore.collection(usersString).doc(userId).delete(); 
     }
     on FirebaseException catch(e){
       throw e.code;

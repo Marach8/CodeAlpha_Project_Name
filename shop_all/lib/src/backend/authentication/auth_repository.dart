@@ -4,6 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shop_all/src/backend/user/user_repository.dart';
 import 'package:shop_all/src/screens/authentication/sign_in_screen.dart';
 import 'package:shop_all/src/screens/authentication/verify_email_screen.dart';
 import 'package:shop_all/src/screens/main_application/main_home_screen.dart';
@@ -134,9 +135,30 @@ class AuthRepository extends GetxController{
   }
 
 
+  Future<dynamic> reAuthenticateUserEmailAndPassword({
+    required String email,
+    required String password
+  }) async{
+    try{
+      AuthCredential userCredential = EmailAuthProvider.credential(email: email, password: password);
+      await _cloudAuth.currentUser!.reauthenticateWithCredential(userCredential);
+    }
+    on FirebaseAuthException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch(e){
+      throw e.toString();
+    }
+  }
+
+
   Future<void> deleteUserAccount() async{
     try{
-      await _cloudAuth.currentUser!.delete();
+      await UserRepository.instance.deleteUserData(authUser!.uid);
+      await _cloudAuth.currentUser?.delete();
     }
     on FirebaseAuthException catch(e){
       throw e.code;

@@ -16,13 +16,18 @@ import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
 import 'package:shop_all/src/utils/dialogs/loading_screen.dart';
 import 'package:shop_all/src/utils/dialogs/snackbar.dart';
 
+
 class UserController extends GetxController{
   static UserController get instance => Get.find();
 
   final userRepo = Get.put(UserRepository());
+  final authRepo = AuthRepository.instance;
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
+  final reAuthEmailController = TextEditingController();
+  final reAuthPasswordController = TextEditingController();
+
   GlobalKey<FormState> updateUserFullNameFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> reAuthenticateUserFormKey = GlobalKey<FormState>();
 
@@ -89,7 +94,7 @@ class UserController extends GetxController{
         return;
       }
 
-      if(!updateUserFullNameFormKey.currentState!.validate()){
+      if(!reAuthenticateUserFormKey.currentState!.validate()){
         hideLoadingScreen();
         return;
       }
@@ -126,19 +131,12 @@ class UserController extends GetxController{
 
   dynamic deleteUserAccount() async{
     try{
-      final authRepo = AuthRepository.instance;
-
       showLoadingScreen(deletingString, bikeRiderLottie);
       final isConnected = await NetworkManager.instance.isConnected();
       if(!isConnected) {
         hideLoadingScreen();
         return;
       }
-
-      // if(!updateUserFullNameFormKey.currentState!.validate()){
-      //   hideLoadingScreen();
-      //   return;
-      // }
 
       final provider = authRepo.authUser!.providerData.map((data) => data.providerId).first;
       if(provider.isNotEmpty){
@@ -148,10 +146,11 @@ class UserController extends GetxController{
           hideLoadingScreen();
           Get.off(() => const LoginView());
         }
-      }
-      else if(provider == passwordString.toLowerCase()){
-        hideLoadingScreen();
-        Get.to(() => const ReAuthenticateView());
+        else if(provider == passwordString.toLowerCase()){
+          //marach.log('I am here');
+          hideLoadingScreen();
+          Get.to(() => const ReAuthenticateView());
+        }
       }
 
     }
@@ -166,9 +165,33 @@ class UserController extends GetxController{
   }
 
 
-  dynamic reAthenticateUser(){
-    
+  dynamic reAuthenticateUser() async{
+    try{
+      showLoadingScreen(reAuthenticatingString, bikeRiderLottie);
+
+      if(!reAuthenticateUserFormKey.currentState!.validate()){
+        hideLoadingScreen();
+        return;
+      }
+
+      await authRepo.reAuthenticateUserEmailAndPassword(
+        email: reAuthEmailController.text.trim(),
+        password: reAuthPasswordController.text.trim()
+      );
+      await authRepo.deleteUserAccount();
+      
+      Get.offAll(() => const LoginView());
+    }
+    catch (e){
+      showAppSnackbar(
+        title: errorOccuredString,
+        message: e.toString(),
+        icon: Icons.cancel,
+        backgroundColor: redColor, 
+      );
+    }
   }
+
 
   dynamic showDeleteAccountWarning(){
     Get.defaultDialog(
