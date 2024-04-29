@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ import 'package:shop_all/src/widgets/custom_widgets/custom_clip_path.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/menu_tile.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
+import 'package:shop_all/src/widgets/custom_widgets/shimmer.dart';
 
 
 class ProfileDestinationView extends StatelessWidget {
@@ -41,9 +43,22 @@ class ProfileDestinationView extends StatelessWidget {
                     () => Visibility(
                       visible: userController.userModel.value != UserModel.empty(),
                       child: ListTile(
-                        leading: const CustomCircularContainer(
-                          radius: 60,
-                          child: CustomLottieAnimationView(lottieString: lottie7,)
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(60),
+                          child: CustomCircularContainer(
+                            radius: 60,
+                            child: Visibility(
+                              visible: userController.userModel.value.displayPicture.isNotEmpty,
+                              replacement: const CustomLottieAnimationView(lottieString: lottie7),
+                              child: CachedNetworkImage(
+                                imageUrl: userController.userModel.value.displayPicture,
+                                fit: BoxFit.cover, 
+                                width: double.infinity,
+                                progressIndicatorBuilder: (_, __, ___) => const CustomShimmerWidget(),
+                                errorWidget: (_, __, ___) => const Icon(Icons.error),
+                              )
+                            )
+                          ),
                         ),
                         title: Text(
                           userController.userModel.value.firstName + 

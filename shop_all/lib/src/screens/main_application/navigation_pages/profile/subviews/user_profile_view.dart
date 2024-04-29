@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -7,12 +8,16 @@ import 'package:shop_all/src/screens/main_application/navigation_pages/profile/s
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/lottie_animation_strings.dart';
 import 'package:shop_all/src/utils/constants/strings/text_strings.dart';
+import 'package:shop_all/src/utils/functions/helper_functions.dart';
+import 'package:shop_all/src/widgets/custom_widgets/app_bar_title_text.dart';
 import 'package:shop_all/src/widgets/custom_widgets/appbar.dart';
 import 'package:shop_all/src/widgets/custom_widgets/circular_container.dart';
 import 'package:shop_all/src/widgets/custom_widgets/dynamic_profile_menu_row.dart';
 import 'package:shop_all/src/widgets/custom_widgets/lottie_animation_view.dart';
 import 'package:shop_all/src/widgets/custom_widgets/profile_menu_row.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
+import 'package:shop_all/src/widgets/custom_widgets/shimmer.dart';
+
 
 class UserProfileView extends StatelessWidget {
   const UserProfileView ({super.key});
@@ -23,7 +28,7 @@ class UserProfileView extends StatelessWidget {
     final userModel = userController.userModel.value;
     return Scaffold(
       appBar: const CustomAppBar(
-        title: Text(profileString),
+        title: CustomAppbarTitleText(title: profileString)
       ),
 
       body: SingleChildScrollView(
@@ -35,12 +40,24 @@ class UserProfileView extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Column(
                   children: [
-                    const CustomCircularContainer(
-                      radius: 200,
-                      child: CustomLottieAnimationView(lottieString: lottie7,)
+                    Obx(
+                      () => ClipRRect(
+                        borderRadius: BorderRadius.circular(getScreenWidth(context)),
+                        child: Visibility(
+                          visible: userController.userModel.value.displayPicture.isNotEmpty,
+                          replacement: const CustomLottieAnimationView(lottieString: lottie7),
+                          child: CachedNetworkImage(
+                            imageUrl: userController.userModel.value.displayPicture,
+                            fit: BoxFit.cover, 
+                            //width: 200,
+                            progressIndicatorBuilder: (_, __, ___) => const CustomShimmerWidget(),
+                            errorWidget: (_, __, ___) => const Icon(Icons.error),
+                          )
+                        ),
+                      ),
                     ),
                     TextButton(
-                      onPressed: (){},
+                      onPressed: () async => await userController.updateProfilePicture(),
                       child: Text(
                         changePhotoString,
                         style: Theme.of(context).textTheme.bodyMedium,
@@ -49,6 +66,7 @@ class UserProfileView extends StatelessWidget {
                   ],
                 ),
               ),
+
               const Gap(10),
               const Divider(),
               const Gap(10),

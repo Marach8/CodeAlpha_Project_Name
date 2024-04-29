@@ -21,3 +21,4 @@ const verificationEmailSentString = 'A verification email has been sent to you..
 const exitString = 'Exit...';
 const verifyingString = 'Verifying your details. Please wait...';
 const reAuthenticationDetailsString = 'Please, verify your account in order to delete it!';
+const profilePicturePath = 'Users/Images/Profile/';

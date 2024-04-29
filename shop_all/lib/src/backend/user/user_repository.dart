@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shop_all/src/models/user_model.dart';
 import 'package:shop_all/src/utils/constants/strings/auth_strings.dart';
 
@@ -61,7 +65,9 @@ class UserRepository extends GetxController{
     }
   }
 
-  Future<dynamic> deleteUserData(String userId) async{
+  Future<dynamic> deleteUserData({
+    required String userId
+  }) async{
     try{
       await _cloudFirestore.collection(usersString).doc(userId).delete(); 
     }
@@ -75,4 +81,27 @@ class UserRepository extends GetxController{
       throw e.toString();
     }
   }
+
+
+  Future<String> uploadUserProfilePicture({
+    required String path,
+    required XFile pictureFile
+  }) async{
+    try{
+      final ref = FirebaseStorage.instance.ref(path).child(pictureFile.name);
+      await ref.putFile(File(pictureFile.path));
+      final url = await ref.getDownloadURL();
+      return url;
+    }
+    on FirebaseException catch(e){
+      throw e.code;
+    }
+    on PlatformException catch(e){
+      throw e.code;
+    }
+    catch (e){
+      throw e.toString();
+    }
+  }
+
 }

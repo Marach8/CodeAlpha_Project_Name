@@ -157,7 +157,7 @@ class AuthRepository extends GetxController{
 
   Future<void> deleteUserAccount() async{
     try{
-      await UserRepository.instance.deleteUserData(authUser!.uid);
+      await UserRepository.instance.deleteUserData(userId: authUser!.uid);
       await _cloudAuth.currentUser?.delete();
     }
     on FirebaseAuthException catch(e){
