@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/bottom_tab_views/cosmetics_view.dart';
+import 'package:shop_all/src/backend/products/category/category_controller.dart';
+import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/bottom_tab_views/custom_tab_bar_view.dart';
 import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/all_brands.dart';
 import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/featured_products_grid_view.dart';
 import 'package:shop_all/src/screens/main_application/navigation_pages/store/subviews/tab_bar.dart';
@@ -18,9 +19,10 @@ class StoreDestinationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final inDarkMode = isInDarkMode(context);
+    final categoryController = CategoryControler.instance;
 
     return DefaultTabController(
-      length: 6,
+      length: categoryController.featuredCategories.length,
       child: Scaffold(
         appBar: CustomAppBar(
           title:Text(
@@ -29,6 +31,7 @@ class StoreDestinationView extends StatelessWidget {
           ),
           actions: const [ShopItemsNotification()],
         ),
+
         body: NestedScrollView(
           headerSliverBuilder: (_, scrollInnerBox){
             return [
@@ -59,29 +62,19 @@ class StoreDestinationView extends StatelessWidget {
                   ],
                 ),
       
-                bottom: const TabBarWidget(
-                  tabs: [
-                    Tab(child: Text('Cosmetics'),),
-                    Tab(child: Text('Furniture'),),
-                    Tab(child: Text('Phones'),),
-                    Tab(child: Text('Electronics'),),
-                    Tab(child: Text('Edibles'),),
-                    Tab(child: Text('Cars'),)
-                  ],
+                bottom: TabBarWidget(
+                  tabs: categoryController.featuredCategories.map(
+                    (category) => Tab(child: Text(category.name))
+                  ).toList()
                 ),
               )
             ];
           },
 
-          body: const TabBarView(
-            children: [
-              CosmeticsTabView(),
-              CosmeticsTabView(),
-              CosmeticsTabView(),
-              CosmeticsTabView(),
-              CosmeticsTabView(),
-              CosmeticsTabView()
-            ],
+          body: TabBarView(
+            children: categoryController.featuredCategories.map(
+              (categoryModel) => CustomTabBarView(categoryModel: categoryModel)
+            ).toList()
           )
         ),
       ),

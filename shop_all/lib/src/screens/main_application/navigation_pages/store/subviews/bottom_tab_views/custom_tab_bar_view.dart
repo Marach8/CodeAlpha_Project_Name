@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop_all/src/models/category_model.dart';
 import 'package:shop_all/src/screens/main_application/navigation_pages/home/home_subviews/products_grid_view.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/logo_strings.dart';
@@ -12,8 +13,13 @@ import 'package:shop_all/src/widgets/custom_widgets/product_card.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 import 'package:shop_all/src/widgets/custom_widgets/section_heading.dart';
 
-class CosmeticsTabView extends StatelessWidget {
-  const CosmeticsTabView({super.key});
+class CustomTabBarView extends StatelessWidget {
+  final CategoryModel categoryModel;
+  
+  const CustomTabBarView({
+    super.key,
+    required this.categoryModel
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -121,3 +121,5 @@ const invalidPhoneNumberString = 'Please enter a valid phone number!';
 const changeNameString = 'Change Name';
 const changeNameInstructionString = 'Ensure to use a real name. The name entered will be used on several pages!';
 const changeOfNameSuccessfulString = 'You have successfully changed your name';
+
+const categoriesString = 'Categories';

@@ -19,7 +19,9 @@ class HomeDestinationView extends StatelessWidget {
         child: Column(
           children: [
             const CustomClipPath(child: UpperPartOfHomeView()),
+
             const CarouselSliderView(),
+            
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 40, 10, 10),
               child: CustomSectionHeading(
@@ -28,6 +30,7 @@ class HomeDestinationView extends StatelessWidget {
                 onPressed: () => Get.to(() => const GeneralProductsView()),
               ),
             ),
+
             ProductsGridView(
               crossAxisCount: 2,
               itemCount: 10,
