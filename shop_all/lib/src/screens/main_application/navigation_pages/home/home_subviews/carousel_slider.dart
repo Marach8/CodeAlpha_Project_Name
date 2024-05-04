@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:shop_all/src/screens/main_application/controllers/carousel_indicator_controller.dart';
+import 'package:shop_all/src/backend/products/banner/banner_controller.dart';
 import 'package:shop_all/src/utils/constants/colors.dart';
 import 'package:shop_all/src/utils/constants/strings/product_image_strings.dart';
-import 'package:shop_all/src/utils/functions/helper_functions.dart';
 import 'package:shop_all/src/widgets/custom_widgets/product_image_renderer.dart';
 
 
@@ -14,8 +13,8 @@ class CarouselSliderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CarouselIndicatorController());
-    final inDarkMode = isInDarkMode(context);
+    final controller = Get.put(BannerController());
+    //final inDarkMode = isInDarkMode(context);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
